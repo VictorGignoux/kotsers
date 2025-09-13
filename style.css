@@ -1,5 +1,157 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: Choco, sans-serif;
 }
 
+@font-face {
+    font-family: Choco;
+    src: url("TT Chocolates Trial Regular.otf");
+}
+
+html{
+    --background: #FBFEFD;
+    --title: #208368;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+}
+
+h1{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5vh 0;
+    font-size: 3rem;
+    color: var(--title);
+}
+
+h2{
+    color: var(--title);
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section{
+    width: 60vw;
+    padding-bottom: 5vh;
+    margin-bottom: 5vh;
+    border-bottom: 2px solid black;
+}
+
+.section-title{
+    font-size: 2rem;
+    margin: 3vh 0;
+}
+
+.section-questions{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3vw;
+}
+
+.question{
+    margin-bottom: 3vh;
+}
+
+.question-title{
+    font-size: 1.3rem;
+    margin-bottom: 1.5vh;
+}
+
+.answers-item{
+    padding: 0.3vh 0.4vw;
+    margin: 0.3vh 0;
+    border-radius: 0.6rem;
+    width: fit-content;
+}
+
+.answers-item:hover{
+    cursor: pointer;
+}
+
+.answers-item:not(.selected):hover{
+    background-color: #efefef !important;
+}
+
+.correct{
+    background-color: #FFF;
+}
+
+#summary{
+    width: 35vw;
+    font-size: 1.5rem;
+    margin-bottom: 5vh;
+    padding: 3vh 3vw;
+    border-radius: 0.6rem;
+    border: 2px solid var(--title);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#summary button{
+    border: none;
+    background-color: transparent;
+    transition: 0.2s;
+    margin: .2vh 0;
+}
+
+#summary button:hover{
+    padding-left: 0.3vw;
+}
+
+button{
+    font-size: 1.4rem;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+/* BUTTON UP */
+
+#up{
+    position: fixed;
+    top: 92vh;
+    right: 3vw;
+    background-color: var(--title);
+    border: none;
+    border-radius: 100%;
+    width: 2vw;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#up img{
+    width: 1.4vw;
+}
+
+#up:hover{
+    background-color: #2ba584;
+}
+
+#mode{
+    position: fixed;
+    top: 90vh;
+    left: 6vw;
+    background-color: var(--title);
+    color: #FFF;
+    border: none;
+    padding: 0.8vh 0.6vw;
+    border-radius: 0.6rem;
+}
+
+#mode:hover{
+    background-color: #2ba584;
+}

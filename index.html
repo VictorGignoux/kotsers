@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,104 +9,1983 @@
     <script src="script.js"></script>
 </head>
 <body>
-	<h1>Réponses QCM Kotlin</h1>
+
     <div id="content">
+        <h1>Réponses QCM Kotlin</h1>
+
+        <div id="summary">
+            <h2>Sommaire</h2>
+            <button type="button" onclick="goto('IALP')">Introduction à la programmation</button>
+            <button type="button" onclick="goto('CAS')">Configurer Android Studio</button>
+            <button type="button" onclick="goto('CUMEPDB')">Créer une mise en page de base</button>
+            <button type="button" onclick="goto('PDBDK')">Principes de base de Kotlin</button>
+            <button type="button" onclick="goto('AUBAUA')">Ajouter un bouton à une application</button>
+            <button type="button" onclick="goto('IAIUE')">Interagir avec l'interface utilisateur et l'état</button>
+            <button type="button" onclick="goto('APBK')">Autres principes de base du Kotlin</button>
+            <button type="button" onclick="goto('CLD')">Créer une liste déroulante</button>
+            <button type="button" onclick="goto('CAA')">Concevoir des applications attrayantes</button>
+            <button type="button" onclick="goto('CDA')">Composants de l'architecture</button>
+            <button type="button" onclick="goto('NDJC')">Navigation dans Jetpack Compose</button>
+            <button type="button" onclick="goto('MPA')">Mises en page adaptatives</button>
+            <button type="button" onclick="goto('RDI')">Récupérer des données sur Internet</button>
+            <button type="button" onclick="goto('CAII')">Charger et afficher des images depuis Internet</button>
+            <button type="button" onclick="goto('SQL')">Présentation de SQL</button>
+            <button type="button" onclick="goto('URPD')">Utiliser Room pour la persistance des données</button>
+            <button type="button" onclick="goto('SDACD')">Stocker des données et y accéder à l'aide de clés avec DataStore</button>
+            <button type="button" onclick="goto('PTW')">Planifier des tâches avec WorkManager</button>
+            <button type="button" onclick="goto('VAC')">Vues Android et Compose dans les vues</button>
+            <button type="button" onclick="goto('VDC')">Vues dans Compose</button>
+        </div>
+
+        <button id="up" type="button" onclick="goto('top')"><img src="./up.svg" alt="up"></button>
+
+        <button id="mode" type="button" onclick="changeMode()">Voir les réponses</button>
+
+        <!----------------------- SECTION : Introduction à la programmation ----------------------->
+
         <div class="section">
-            <h2 class="section-title">Introduction à la programmation</h2>
+            <h2 class="section-title" id="IALP">Introduction à la programmation</h2>
             <div class="section-questions">
                 <div class="question">
-                    <p class="question-title">Quelle déclaration de variable est valide ?</p>
+                    <p class="question-title">1/ Quelle déclaration de variable est valide ?</p>
                     <div class="answers">
-                        <div class="answers-item">var hello: Int? = ""</div>
-                        <div class="answers-item">String "hello" = hello</div>
-                        <div class="answers-item correct">val hello = "hello"</div>
-                        <div class="answers-item">hello: String = "hello"</div>
+                        <div class="answers-item">a. var hello: Int? = ""</div>
+                        <div class="answers-item">b. String "hello" = hello</div>
+                        <div class="answers-item correct">c. val hello = "hello"</div>
+                        <div class="answers-item">d. hello: String = "hello"</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <p class="question-title">Pour déclarer une variable qui ne changera pas, il est préférable d'utiliser var plutôt que val.</p>
+                    <p class="question-title">2/ Pour déclarer une variable qui ne changera pas, il est préférable d'utiliser var plutôt que val.</p>
                     <div class="answers">
-                        <div class="answers-item">Vrai</div>
-                        <div class="answers-item correct">Faux</div>
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <p class="question-title">Quelles méthodes permettent de mettre à jour une variable ?</p>
+                    <p class="question-title">3/ Quelles méthodes permettent de mettre à jour une variable ?</p>
                     <div class="answers">
-                        <div class="answers-item correct">total++</div>
-                        <div class="answers-item">total - 1</div>
-                        <div class="answers-item correct">total--</div>
-                        <div class="answers-item correct">total = total + 1</div>
+                        <div class="answers-item correct">a. total++</div>
+                        <div class="answers-item">b. total - 1</div>
+                        <div class="answers-item correct">c. total--</div>
+                        <div class="answers-item correct">d. total = total + 1</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <p class="question-title">En langage Kotlin, les commentaires peuvent être composés d'une seule ou de plusieurs lignes et sont ignorés par le compilateur.</p>
+                    <p class="question-title">4/ En langage Kotlin, les commentaires peuvent être composés d'une seule ou de plusieurs lignes et sont ignorés par le compilateur.</p>
                     <div class="answers">
-                        <div class="answers-item correct">Vrai</div>
-                        <div class="answers-item">Faux</div>
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <p class="question-title">Quel élément n'est pas un type de données en Kotlin ?</p>
+                    <p class="question-title">5/ Quel élément n'est pas un type de données en Kotlin ?</p>
                     <div class="answers">
-                        <div class="answers-item">String</div>
-                        <div class="answers-item correct">Decimal</div>
-                        <div class="answers-item">Int</div>
-                        <div class="answers-item">Boolean</div>
+                        <div class="answers-item">a. String</div>
+                        <div class="answers-item correct">b. Decimal</div>
+                        <div class="answers-item">c. Int</div>
+                        <div class="answers-item">d. Boolean</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <p class="question-title">Float représente également une valeur décimale, mais est moins précis que Double.</p>
+                    <p class="question-title">6/ Float représente également une valeur décimale, mais est moins précis que Double.</p>
                     <div class="answers">
-                        <div class="answers-item correct">Vrai</div>
-                        <div class="answers-item">Faux</div>
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <p class="question-title">En langage Kotlin, le point d'entrée d'un programme est l'/la ___.</p>
+                    <p class="question-title">7/ En langage Kotlin, le point d'entrée d'un programme est l'/la ___.</p>
                     <div class="answers">
-                        <div class="answers-item">instruction println()</div>
-                        <div class="answers-item">variable val</div>
-                        <div class="answers-item correct">Fonction main()</div>
-                        <div class="answers-item">instruction return</div>
+                        <div class="answers-item">a. instruction println()</div>
+                        <div class="answers-item">b. variable val</div>
+                        <div class="answers-item correct">c. Fonction main()</div>
+                        <div class="answers-item">d. instruction return</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <p class="question-title"> Quelles affirmations concernant les valeurs renvoyées par une fonction sont vraies ? </p>
+                    <p class="question-title">8/ Quelles affirmations concernant les valeurs renvoyées par une fonction sont vraies ? </p>
                     <div class="answers">
-                        <div class="answers-item correct">S'il n'est pas indiqué par une fonction, le type renvoyé est Unit.</div>
-                        <div class="answers-item correct">Une valeur renvoyée peut être stockée dans une variable.</div>
-                        <div class="answers-item">Les fonctions avec un type renvoyé Unit doivent inclure une instruction return.</div>
-                        <div class="answers-item correct">Une valeur renvoyée doit être du même type que celui renvoyé par une fonction.</div>
+                        <div class="answers-item correct">a. S'il n'est pas indiqué par une fonction, le type renvoyé est Unit.</div>
+                        <div class="answers-item correct">b. Une valeur renvoyée peut être stockée dans une variable.</div>
+                        <div class="answers-item">c. Les fonctions avec un type renvoyé Unit doivent inclure une instruction return.</div>
+                        <div class="answers-item correct">d. Une valeur renvoyée doit être du même type que celui renvoyé par une fonction.</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <p class="question-title">Quelles affirmations concernant les fonctions sont vraies ?</p>
+                    <p class="question-title">9/ Quelles affirmations concernant les fonctions sont vraies ?</p>
                     <div class="answers">
-                        <div class="answers-item correct">Les fonctions acceptent des paramètres ou des variables en tant qu'entrées.</div>
-                        <div class="answers-item">Les paramètres de fonction doivent avoir des arguments par défaut.</div>
-                        <div class="answers-item correct">Lorsque vous appelez une fonction avec des paramètres, les valeurs transmises sont appelées "arguments".</div>
-                        <div class="answers-item correct">Diviser votre code en fonctions distinctes facilite sa gestion.</div>
+                        <div class="answers-item correct">a. Les fonctions acceptent des paramètres ou des variables en tant qu'entrées.</div>
+                        <div class="answers-item">b. Les paramètres de fonction doivent avoir des arguments par défaut.</div>
+                        <div class="answers-item correct">c. Lorsque vous appelez une fonction avec des paramètres, les valeurs transmises sont appelées "arguments".</div>
+                        <div class="answers-item correct">d. Diviser votre code en fonctions distinctes facilite sa gestion.</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <p class="question-title"> Les arguments nommés vous permettent de modifier l'ordre dans lequel vous transmettez les arguments à une fonction.</p>
+                    <p class="question-title">10/ Les arguments nommés vous permettent de modifier l'ordre dans lequel vous transmettez les arguments à une fonction.</p>
                     <div class="answers">
-                        <div class="answers-item correct">Vrai</div>
-                        <div class="answers-item">Faux</div>
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!----------------------- SECTION : Configurer Android Studio ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="CAS">Configurer Android Studio</h2>
+            <div class="section-questions">
+
+                <div class="question">
+                    <p class="question-title">1/ Que signifie IDE ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Integrated Development Environment</div>
+                        <div class="answers-item">b. Independent Design Environment</div>
+                        <div class="answers-item">c. Ideal Developer Environment</div>
+                        <div class="answers-item">d. Intelligent Design Environment</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Quels sont les avantages d'Android Studio ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Il permet d'éviter les fautes de frappe et d'autres erreurs dans votre code.</div>
+                        <div class="answers-item correct">b. Il est fourni avec un appareil virtuel (appelé émulateur) capable d'exécuter votre application.</div>
+                        <div class="answers-item correct">c. Il peut vous montrer un aperçu en temps réel de l'aspect de votre application à l'écran pendant que vous codez.</div>
+                        <div class="answers-item">d. Il peut traduire automatiquement votre application dans d'autres langues.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Quel est l'intérêt d'utiliser un appareil virtuel (ou émulateur) dans Android Studio ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Pour afficher divers messages d'erreur aux utilisateurs</div>
+                        <div class="answers-item">b. Pour tester le code de l'application de manière sécurisée</div>
+                        <div class="answers-item correct">c. Pour tester votre application sur un appareil sans disposer de cet appareil physique</div>
+                        <div class="answers-item">d. Pour voir à quoi ressemble votre application dans un navigateur Web</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ À quoi sert un modèle de projet dans Android Studio ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Il permet à Android Studio de télécharger les fichiers plus rapidement.</div>
+                        <div class="answers-item correct">b. Il permet de créer plus rapidement une application.</div>
+                        <div class="answers-item correct">c. Il offre une structure conforme aux bonnes pratiques.</div>
+                        <div class="answers-item">d. C'est le seul moyen de créer des applications que vous pouvez prévisualiser dans Android Studio.</div>
+                        <div class="answers-item correct">e. Il permet de réduire les risques d'erreur lors de la création d'une application en préremplissant le projet avec du code d'application.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Comment créer un projet dans Android Studio ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Déconnectez-vous d'Android Studio, puis accédez au dossier de votre projet pour savoir comment procéder.</div>
+                        <div class="answers-item">b. Si vous avez déjà ouvert un projet, sélectionnez Fichier &gt; Nouveau &gt; Nouveau projet dans le menu Android Studio.</div>
+                        <div class="answers-item">c. Dans la fenêtre "Bienvenue dans Android Studio", cliquez sur "Démarrer un nouveau projet Android Studio".</div>
+                        <div class="answers-item">d. Créez un fichier sur votre ordinateur et nommez-le "Nouveau projet Android Studio".</div>
+                        <div class="answers-item correct">e. b et c permettent de créer un projet dans Android Studio.</div>
+                        <div class="answers-item">f. Aucune des réponses ci-dessus</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ ___ est une fonction permettant de définir une mise en page dans votre application à l'aide de fonctions modulables.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. ComponentActivity()</div>
+                        <div class="answers-item">b. onCreate()</div>
+                        <div class="answers-item">c. DefaultPreview()</div>
+                        <div class="answers-item correct">d. setContent()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Une fonction Compose nécessite l'annotation @Composable.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ Un(e) ___ est un composable avec une couleur d'arrière-plan qui peut contenir d'autres composables.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Couleur</div>
+                        <div class="answers-item">b. Conteneur</div>
+                        <div class="answers-item correct">c. Surface</div>
+                        <div class="answers-item">d. Box</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ La marge intérieure est un exemple d'/de ___</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Propriété</div>
+                        <div class="answers-item">b. Composable</div>
+                        <div class="answers-item">c. Attribute</div>
+                        <div class="answers-item correct">d. Lettres modificatives</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ Quelle affirmation concernant Compose est fausse ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Le modèle Activité Compose vide permet de créer une application simple.</div>
+                        <div class="answers-item">b. Vous pouvez afficher les mises en page dans la fenêtre d'aperçu, sans exécuter votre application.</div>
+                        <div class="answers-item correct">c. Tous les éléments et thèmes d'une application Compose sont contenus dans une surface.</div>
+                        <div class="answers-item">d. Les thèmes, tels que GreetingCardTheme, vous permettent de définir le style des composables.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Créer une mise en page de base ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="CUMEPDB">Créer une mise en page de base</h2>
+            <div class="section-questions">
+
+                <div class="question">
+                    <p class="question-title">1/ Qu'est-ce que Jetpack Compose ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Un kit d'outils modernes pour développer des interfaces utilisateur Android</div>
+                        <div class="answers-item">b. Un kit d'outils pour concevoir des bibliothèques</div>
+                        <div class="answers-item">c. Une interface de base de données</div>
+                        <div class="answers-item">d. Un plug-in de développement d'APK</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Les fonctions composables sont les éléments de base de Compose.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Quel élément permet d'annoter une fonction modulable ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. @Annotation</div>
+                        <div class="answers-item">b. @ComposableFunction</div>
+                        <div class="answers-item correct">c. @Composable</div>
+                        <div class="answers-item">d. @Preview</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Dans Compose, les éléments de mise en page de base sont :</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Colonne</div>
+                        <div class="answers-item correct">b. Ligne</div>
+                        <div class="answers-item">c. Texte</div>
+                        <div class="answers-item correct">d. Box</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Quelle fenêtre d'outil permet d'importer, de créer, de gérer et d'utiliser des ressources dans votre application ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Gestionnaire d'applications</div>
+                        <div class="answers-item correct">b. Gestionnaire de ressources</div>
+                        <div class="answers-item">c. Outil de ressources</div>
+                        <div class="answers-item">d. Gestionnaire de mises en page</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Quelle classe est générée automatiquement par Android et contient les ID de toutes les ressources du projet ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. La classe Android</div>
+                        <div class="answers-item">b. La classe Resource</div>
+                        <div class="answers-item correct">c. La classe R</div>
+                        <div class="answers-item">d. La classe ResourceID</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Quelle fonction permet de charger une ressource d'image drawable ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. La fonction stringResource()</div>
+                        <div class="answers-item correct">b. La fonction painterResource()</div>
+                        <div class="answers-item">c. La fonction ImageResource()</div>
+                        <div class="answers-item">d. La fonction loadResource()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ Quel paramètre de fonction sert à ajouter un texte d'accessibilité, utilisé par TalkBack ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. accessibilityText</div>
+                        <div class="answers-item">b. contentText</div>
+                        <div class="answers-item">c. accessibilityDescription</div>
+                        <div class="answers-item correct">d. contentDescription</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ La mise en page en cases empile les éléments d'interface utilisateur les uns sur les autres.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ Quel paramètre permet d'aligner l'élément enfant avec le début du parent ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Alignment.End</div>
+                        <div class="answers-item">b. Alignment.Begin</div>
+                        <div class="answers-item correct">c. Alignment.Start</div>
+                        <div class="answers-item">d. Alignment.Top</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Principes de base de Kotlin ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="PDBDK">Principes de base de Kotlin</h2>
+            <div class="section-questions">
+
+                <div class="question">
+                    <p class="question-title">1/ Le code suivant affichera "Divisible by 5" si number est égal à 25.</p>
+                    <div class="code">
+                        if (number % 10 == 0) {<br>
+                        println("Divisible by 10")<br>
+                        } else if (number == 5) {<br>
+                        println("Divisible by 5")<br>
+                        }
+                    </div>
+                    <div class="answers">
+                        <div class="answers-item">a. true</div>
+                        <div class="answers-item correct">b. false</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Parmi les conditions suivantes, lesquelles sont remplies lorsque x = 5 ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. x == 5</div>
+                        <div class="answers-item correct">b. x in 1..5</div>
+                        <div class="answers-item correct">c. x is Int</div>
+                        <div class="answers-item">d. x % 5</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Parmi les propositions suivantes, laquelle n'est pas un concept de base de la programmation orientée objet ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Abstraction</div>
+                        <div class="answers-item correct">b. Lisibilité</div>
+                        <div class="answers-item">c. Héritage</div>
+                        <div class="answers-item">d. Polymorphisme</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Quels sont les quatre modificateurs de visibilité en Kotlin ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. public, private, protected, abstract</div>
+                        <div class="answers-item">b. static, override, internal, external</div>
+                        <div class="answers-item correct">c. private, protected, public, internal</div>
+                        <div class="answers-item">d. public, protected, static, internal</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Le mot clé ___ est utilisé pour appeler une méthode à partir de la classe parent.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. this</div>
+                        <div class="answers-item correct">b. super</div>
+                        <div class="answers-item">c. parent</div>
+                        <div class="answers-item">d. self</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Un(e) ___ définit les propriétés ou les méthodes devant être implémentées par une classe.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Délégué</div>
+                        <div class="answers-item">b. type générique</div>
+                        <div class="answers-item correct">c. Interface</div>
+                        <div class="answers-item">d. Sous-classe</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Parmi les éléments suivants, lequel est le mieux représenté par un type nullable ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Le nombre de followers (zéro ou plus) dans une application de réseaux sociaux.</div>
+                        <div class="answers-item correct">b. Une photo de profil facultative.</div>
+                        <div class="answers-item">c. Un nom d'utilisateur devant comporter au moins un caractère.</div>
+                        <div class="answers-item">d. Un identifiant unique attribué à chaque utilisateur.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ L'opérateur ___ vous permet d'appeler une méthode uniquement si l'objet n'est pas nul.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. .</div>
+                        <div class="answers-item">b. !!</div>
+                        <div class="answers-item">c. ?:</div>
+                        <div class="answers-item correct">d. ?.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ Parmi les affirmations suivantes concernant les fonctions Kotlin, laquelle est fausse ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Une fonction peut être remplacée par un autre type de données, et inversement.</div>
+                        <div class="answers-item">b. Une fonction peut être renvoyée à partir d'une autre fonction.</div>
+                        <div class="answers-item">c. Une fonction peut en utiliser une autre en tant que paramètre.</div>
+                        <div class="answers-item">d. Une fonction possède un type de données, tel que (Int) -> Unit.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ Un littéral de fonction est un autre nom pour désigner ___</p>
+                    <div class="answers">
+                        <div class="answers-item">a. un type de fonction</div>
+                        <div class="answers-item correct">b. une expression lambda</div>
+                        <div class="answers-item">c. une référence de fonction</div>
+                        <div class="answers-item">d. une lambda finale</div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Ajouter un bouton à une application ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="AUBAUA">Ajouter un bouton à une application</h2>
+            <div class="section-questions">
+
+                <div class="question">
+                    <p class="question-title">1/ Utilisez un composable ___ pour afficher une image.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Bouton</div>
+                        <div class="answers-item">b. Texte</div>
+                        <div class="answers-item correct">c. Image</div>
+                        <div class="answers-item">d. Icône</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Alignment.Center centre les composants de l'interface utilisateur horizontalement et verticalement.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Les fonctions modulables peuvent stocker un objet en mémoire à l'aide du composable ___.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. retenir</div>
+                        <div class="answers-item">b. Colonne</div>
+                        <div class="answers-item">c. Lettres modificatives</div>
+                        <div class="answers-item">d. @Composable</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Le débogueur vous permet d'inspecter les variables lorsque l'exécution du code a été suspendue.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ En utilisant des valeurs ___ dans une fonction modulable, vous pouvez transformer les variables en objets observables qui planifient une recomposition lorsque leur valeur change.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. retenir</div>
+                        <div class="answers-item">b. Lettres modificatives</div>
+                        <div class="answers-item">c. @Composable</div>
+                        <div class="answers-item correct">d. mutableStateOf</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Le composable ___ place ses enfants dans une séquence verticale.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Ligne</div>
+                        <div class="answers-item">b. Box</div>
+                        <div class="answers-item correct">c. Colonne</div>
+                        <div class="answers-item">d. Lettres modificatives</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ La fonctionnalité de débogueur ___ vous permet de remonter dans la pile d'appel.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Passer</div>
+                        <div class="answers-item correct">b. Sortir</div>
+                        <div class="answers-item">c. Entrer</div>
+                        <div class="answers-item">d. Reprendre le programme</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION :  Interagir avec l'interface utilisateur et l'état ------------------------>
+
+        <div class="section">
+            <h2 class="section-title" id="IAIUE">Interagir avec l'interface utilisateur et l'état</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Lorsque Jetpack Compose exécute vos composables pour la première fois lors du/de la ___, il suit les composables que vous appelez pour décrire votre UI.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. composition initiale</div>
+                        <div class="answers-item">b. Recomposition</div>
+                        <div class="answers-item">c. changement d'état</div>
+                        <div class="answers-item">d. Fermeture de l'application</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Le seul moyen de modifier une composition est la recomposition.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ ___ désigne le moment où Jetpack Compose réexécute les composables qui ont pu changer en réponse à des modifications de données.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. composition initiale</div>
+                        <div class="answers-item correct">b. Recomposition</div>
+                        <div class="answers-item">c. changement d'état</div>
+                        <div class="answers-item">d. Fermeture de l'application</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Dans une application, ___ correspond à toute valeur susceptible de changer au fil du temps.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. State</div>
+                        <div class="answers-item">b. valeur</div>
+                        <div class="answers-item">c. valueChange</div>
+                        <div class="answers-item">d. StateValue</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ ___ est un modèle qui consiste à faire remonter un état pour obtenir un composant sans état.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. changement d'état</div>
+                        <div class="answers-item correct">b. Hissage d'état</div>
+                        <div class="answers-item">c. La composition de hissage</div>
+                        <div class="answers-item">d. Recomposition</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Quelle propriété KeyboardAction permet de déplacer le curseur vers le composable suivant ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. onDone</div>
+                        <div class="answers-item correct">b. onNext</div>
+                        <div class="answers-item">c. onGo</div>
+                        <div class="answers-item">d. onSend</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Quelle fonction Kotlin permet d'arrondir une valeur de type float ou double ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. kotlin.math.ceilUp()</div>
+                        <div class="answers-item correct">b. kotlin.math.ceil()</div>
+                        <div class="answers-item">c. kotlin.math.roundDown()</div>
+                        <div class="answers-item">d. kotlin.math.roundUp()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ L'outil d'inspection de la mise en page, disponible dans Jetpack Compose, permet d'inspecter une mise en page Compose dans une application en cours d'exécution sur un émulateur ou un appareil physique.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ Les tests de l'interface utilisateur sont enregistrés dans le répertoire ___.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. principal</div>
+                        <div class="answers-item correct">b. androidTest</div>
+                        <div class="answers-item">c. test</div>
+                        <div class="answers-item">d. res</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ Les tests locaux et les tests de l'interface utilisateur doivent être annotés avec l'annotation ___.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. @VisibleForTesting</div>
+                        <div class="answers-item">b. @Preview</div>
+                        <div class="answers-item correct">c. @Test</div>
+                        <div class="answers-item">d. @Composable</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Autres principes de base du Kotlin ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="APBK">Autres principes de base du Kotlin</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Parmi les propositions suivantes, laquelle permet de définir une classe de données en Kotlin ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. data class Person(val name: String, val age: Int)</div>
+                        <div class="answers-item">b. class Person(val name: String, val age: Int): data</div>
+                        <div class="answers-item">c. class Person(val name: String, val age: Int)</div>
+                        <div class="answers-item">d. data class Person{val name: String, val age: Int}</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Lorsque vous utilisez une classe scellée, toutes les sous-classes directes doivent se trouver dans le même package.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. vrai</div>
+                        <div class="answers-item">b. faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Lorsque vous utilisez des génériques, le type de données "générique" est inclus dans ___.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. []</div>
+                        <div class="answers-item">b. {}</div>
+                        <div class="answers-item">c. ()</div>
+                        <div class="answers-item correct">d. &lt;&gt;</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Une classe ___ est utile lorsque vous possédez un ensemble fixe de valeurs.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. enum</div>
+                        <div class="answers-item">b. scellée</div>
+                        <div class="answers-item">c. de données</div>
+                        <div class="answers-item">d. hérité</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Pour créer un objet de liste capable de modifier sa taille, vous devez appeler ___.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. modifiableListOf()</div>
+                        <div class="answers-item">b. immutableListOf()</div>
+                        <div class="answers-item">c. listOf()</div>
+                        <div class="answers-item correct">d. mutableListOf()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Parmi les propositions suivantes, lesquelles sont des fonctions d'ordre supérieur ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. map</div>
+                        <div class="answers-item">b. arrangeBy</div>
+                        <div class="answers-item correct">c. filter</div>
+                        <div class="answers-item correct">d. forEach</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Compte tenu de la ligne de code suivante et parmi les commandes proposées, laquelle permettra d'imprimer Blue ?</p>
+                    <pre>val colors = listOf("Red", "Green", "Blue")</pre>
+                    <div class="answers">
+                        <div class="answers-item correct">a. println(colors[2])</div>
+                        <div class="answers-item correct">b. println(colors.get(2))</div>
+                        <div class="answers-item">c. println(colors.contains(2))</div>
+                        <div class="answers-item">d. println(colors.getOrDefaultValue(index = 2, defaultValue = 10))</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ Le concept de programmation d'une classe comportant une seule instance est appelé "___".</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Unicité</div>
+                        <div class="answers-item correct">b. Singleton</div>
+                        <div class="answers-item">c. objet unique</div>
+                        <div class="answers-item">d. Lambda</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ Parmi les affirmations suivantes concernant les ensembles et les cartes, laquelle est vraie ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Un ensemble doit contenir des valeurs distinctes et les clés d'une carte doivent être distinctes.</div>
+                        <div class="answers-item">b. Un ensemble doit contenir des valeurs distinctes et les clés d'une carte peuvent contenir des doublons.</div>
+                        <div class="answers-item">c. Un ensemble peut contenir des valeurs en double, les valeurs d'une carte également.</div>
+                        <div class="answers-item">d. Un ensemble peut contenir des valeurs en double et les clés d'une carte doivent être distinctes.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ Si vous disposez d'une variable nommée records, qui est une collection, vous pouvez appeler ___ afin de déterminer le nombre d'éléments qu'elle contient.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. records.length</div>
+                        <div class="answers-item">b. records.quantity</div>
+                        <div class="answers-item">c. len(records)</div>
+                        <div class="answers-item correct">d. records.size</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Créer une liste déroulante ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="CLD">Créer une liste déroulante</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Les icônes de lanceur adaptatives des applications Android se composent d'un drawable vectoriel de premier plan et d'arrière-plan.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Quel composable permet de créer une liste déroulante avec un nombre variable d'éléments ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Column</div>
+                        <div class="answers-item">b. Row</div>
+                        <div class="answers-item correct">c. LazyColumn</div>
+                        <div class="answers-item">d. Card</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Quel type de fichier est utilisé pour les vecteurs de premier plan et d'arrière-plan de l'icône de lanceur ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. .txt</div>
+                        <div class="answers-item">b. .jpg</div>
+                        <div class="answers-item">c. .png</div>
+                        <div class="answers-item correct">d. .xml</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Quel composable permet de créer une grille à défilement vertical avec un nombre indéterminé d'éléments ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. LazyColumn</div>
+                        <div class="answers-item correct">b. LazyVerticalGrid</div>
+                        <div class="answers-item">c. LazyHorizontalGrid</div>
+                        <div class="answers-item">d. Row</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Le composable Column n'est pas une bonne option pour une liste d'éléments de longueur inconnue, car ___.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. il ne peut contenir qu'un nombre limité d'éléments prédéfinis.</div>
+                        <div class="answers-item">b. il organise les éléments verticalement.</div>
+                        <div class="answers-item">c. il active le défilement par défaut, sans code supplémentaire.</div>
+                        <div class="answers-item">d. il peut ajouter du contenu à la demande.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ La méthode ___ permet d'ajouter du contenu à un composable LazyColumn.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. painterResource()</div>
+                        <div class="answers-item">b. Modifier.padding()</div>
+                        <div class="answers-item correct">c. items()</div>
+                        <div class="answers-item">d. onCreate()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Quel composable organise les éléments horizontalement ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Column</div>
+                        <div class="answers-item">b. Card</div>
+                        <div class="answers-item">c. Image</div>
+                        <div class="answers-item correct">d. Row</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ Quel composable organise les éléments verticalement ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Column</div>
+                        <div class="answers-item">b. Card</div>
+                        <div class="answers-item">c. Image</div>
+                        <div class="answers-item">d. Row</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Concevoir des applications attrayantes ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="CAA">Concevoir des applications attrayantes</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ En ajoutant des animations dans votre application Android, vous pouvez :</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Indiquer visuellement ce qui se passe dans votre application.</div>
+                        <div class="answers-item">b. Donner une apparence soignée à votre application.</div>
+                        <div class="answers-item">c. Signaler des modifications.</div>
+                        <div class="answers-item correct">d. Toutes les réponses ci-dessus.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ L'animation de rétroaction est basée sur :</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Les valeurs de début et de fin sur la durée spécifiée.</div>
+                        <div class="answers-item correct">b. Le taux d'amortissement et la raideur.</div>
+                        <div class="answers-item">c. Les valeurs d'instantané spécifiées à différents horodatages.</div>
+                        <div class="answers-item">d. Une interpolation entre deux valeurs d'image clé.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ L'animation de rétroaction est basée sur le principe physique de la force de tension.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Dans la thématisation Material, la couleur ___ correspond à la couleur la plus fréquente sur les écrans et dans les composants de votre application.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. principal</div>
+                        <div class="answers-item">b. secondaire</div>
+                        <div class="answers-item">c. surface</div>
+                        <div class="answers-item">d. arrière-plan</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Le fichier suivant est utilisé pour définir les formes des composants dans Compose.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Theme.kt</div>
+                        <div class="answers-item">b. Color.kt</div>
+                        <div class="answers-item correct">c. Shape.kt</div>
+                        <div class="answers-item">d. Colors.kt</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Vous ne pouvez avoir qu'un seul composable @Preview</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Un code couleur hexadécimal commence par le caractère dièse (#), suivi de six lettres et/ou chiffres représentant les composants rouge, vert et bleu (RVB) de cette couleur.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ Le fichier ___ contient toutes les informations sur le thème de l'application, lequel est défini par des couleurs, des formes et une typographie.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Theme.kt</div>
+                        <div class="answers-item">b. Color.kt</div>
+                        <div class="answers-item">c. Shape.kt</div>
+                        <div class="answers-item">d. Colors.kt</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ L'/Le/La ___ crée un contraste entre la fiche et l'arrière-plan en ajoutant une ombre qui rend l'application plus réaliste et plus attrayante.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Elevation</div>
+                        <div class="answers-item">b. Forme</div>
+                        <div class="answers-item">c. Couleur</div>
+                        <div class="answers-item">d. Thème</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ Quels sont les avantages du thème sombre ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Il peut réduire considérablement la consommation d'énergie (selon la technologie d'écran de l'appareil).</div>
+                        <div class="answers-item">b. Il améliore la visibilité pour les utilisateurs atteints d'une déficience visuelle et ceux sensibles à la lumière vive.</div>
+                        <div class="answers-item">c. Il permet à tous d'utiliser un appareil dans des conditions de faible luminosité.</div>
+                        <div class="answers-item correct">d. Toutes les réponses ci-dessus.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">11/ TalkBack permet de naviguer dans une application en utilisant des contacteurs au lieu de l'écran tactile.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">12/ Quel attribut permet à TalkBack d'énoncer une description pertinente d'une image ou d'une icône ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. elevation</div>
+                        <div class="answers-item">b. shape</div>
+                        <div class="answers-item correct">c. contentDescription</div>
+                        <div class="answers-item">d. style</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Composants de l'architecture ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="CDA">Composants de l'architecture</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Quelle méthode est appelée en premier lorsque l'application n'est plus active ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. onPause()</div>
+                        <div class="answers-item">b. onStart()</div>
+                        <div class="answers-item">c. onCreate()</div>
+                        <div class="answers-item">d. onStop()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Après ___, l'application ne sera plus visible à l'écran.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. onPause()</div>
+                        <div class="answers-item">b. onStart()</div>
+                        <div class="answers-item">c. onCreate()</div>
+                        <div class="answers-item correct">d. onStop()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Utilisez ___ pour rédiger un message de débogage. Cette méthode nécessite deux arguments : la balise de journal et le message de journal.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Log.i()</div>
+                        <div class="answers-item correct">b. Log.d()</div>
+                        <div class="answers-item">c. Log.e()</div>
+                        <div class="answers-item">d. Log.w()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Pour enregistrer une valeur devant survivre à une modification de configuration, déclarez ses variables avec ___.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. MutableState{}</div>
+                        <div class="answers-item correct">b. rememberSaveable{}</div>
+                        <div class="answers-item">c. remember{}</div>
+                        <div class="answers-item">d. le hissage d'état</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Selon le principe de conception de séparation des tâches, l'application doit être divisée en classes, chacune ayant des responsabilités distinctes.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ L'interface utilisateur correspond à ce que l'utilisateur voit, tandis que l'état de l'interface utilisateur correspond à ce qu'il devrait voir selon l'application.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Selon l'architecture d'application recommandée, chaque application doit au minimum comporter les deux couches suivantes :</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Couches de domaine et de données</div>
+                        <div class="answers-item correct">b. Couches d'interface utilisateur et de données</div>
+                        <div class="answers-item">c. Couches de dépôt et d'interface utilisateur</div>
+                        <div class="answers-item">d. Couches de domaine et d'interface utilisateur</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ StateFlow est un flux observable de conteneur de données qui émet les mises à jour de l'état actuel et du nouvel état.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ Parmi les configurations suivantes, laquelle doit être ajoutée au fichier build.gradle afin d'ajouter des dépendances au code source du test unitaire ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. implementation</div>
+                        <div class="answers-item correct">b. testImplementation</div>
+                        <div class="answers-item">c. debugImplementation</div>
+                        <div class="answers-item">d. androidTestImplementation</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ Les tests unitaires sont exécutés sur un émulateur ou un appareil Android.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Navigation dans Jetpack Compose ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="NDJC">Navigation dans Jetpack Compose</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Une route est définie avec un type de données ___.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Fonction @Composable</div>
+                        <div class="answers-item">b. NavHost.Route</div>
+                        <div class="answers-item correct">c. String</div>
+                        <div class="answers-item">d. NavRoute</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Avec NavHost, vous devez explicitement spécifier un écran de démarrage.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Il est recommandé de ne pas transmettre un NavHostController à des composables individuels.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ ___ est un composable qui gère l'écran qui s'affiche en fonction d'une route donnée.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. NavController</div>
+                        <div class="answers-item">b. NavHostController</div>
+                        <div class="answers-item correct">c. NavHost</div>
+                        <div class="answers-item">d. ComposableNavigator</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Parmi les paramètres suivants, quels sont les deux pris par la fonction composable() appelée dans un NavHost ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Un contenu de destination et une route</div>
+                        <div class="answers-item correct">b. Une route et un contenu composable</div>
+                        <div class="answers-item">c. Un chemin d'accès et un composable</div>
+                        <div class="answers-item">d. Un contenu composable et un intent</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Vous pouvez modifier la route actuellement affichée à l'aide de la méthode ___.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. update()</div>
+                        <div class="answers-item">b. composable()</div>
+                        <div class="answers-item">c. transition()</div>
+                        <div class="answers-item correct">d. navigate()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ La méthode ___ permet de supprimer un ou plusieurs écrans de la pile "Retour".</p>
+                    <div class="answers">
+                        <div class="answers-item">a. popToStartDestination()</div>
+                        <div class="answers-item correct">b. popBackStack()</div>
+                        <div class="answers-item">c. popComposable()</div>
+                        <div class="answers-item">d. popToBackStack()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ Dans une application multi-écran, le fait d'accéder à un nouvel écran place celui-ci au bas de la pile "Retour".</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ L'intent ___ contient des données supplémentaires transmises à un intent.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. arguments</div>
+                        <div class="answers-item correct">b. informations supplémentaires</div>
+                        <div class="answers-item">c. paramètres</div>
+                        <div class="answers-item">d. propriétés</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ StateFlow est un flux observable de conteneur de données qui émet les mises à jour de l'état actuel et du nouvel état.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">11/ Parmi les affirmations suivantes concernant les boutons "Retour" et "Haut", lesquelles sont vraies ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Le bouton "Retour" est un bouton système.</div>
+                        <div class="answers-item">b. Le bouton "Haut" est fourni par le système en bas de l'écran.</div>
+                        <div class="answers-item">c. Le bouton "Retour" fait partie de l'AppBar</div>
+                        <div class="answers-item">d. Le bouton "Haut" de l'AppBar permet de revenir automatiquement à l'écran précédent.</div>
+                        <div class="answers-item">e. Le bouton "Retour" ne s'affiche que si vous utilisez la navigation.</div>
+                        <div class="answers-item correct">f. Le bouton "Haut" peut être affiché ou masqué selon l'écran actuel.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Mises en page adaptatives ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="MPA">Mises en page adaptatives</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Le composable ___ est utilisé pour répondre au bouton "Retour", avec ou sans NavHost.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. BackButton</div>
+                        <div class="answers-item correct">b. BackHandler</div>
+                        <div class="answers-item">c. BackNavigator</div>
+                        <div class="answers-item">d. BackStack</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Parmi les affirmations suivantes concernant les écrans plus grands, lesquelles sont vraies ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Le positionnement des boutons est plus important sur les écrans plus grands.</div>
+                        <div class="answers-item">b. Il n'est généralement pas nécessaire de modifier la mise en page de l'interface utilisateur pour que l'application fonctionne bien sur les grands écrans.</div>
+                        <div class="answers-item correct">c. Ajouter une autre mise en page sur le même écran évite d'avoir à naviguer entre les écrans.</div>
+                        <div class="answers-item correct">d. Les mises en page pour grands écrans doivent éviter de regrouper les boutons les plus utilisés au centre de l'écran.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ ___ est une mesure spécifique de la largeur ou de la hauteur, où la mise en page d'une application doit changer.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Une classe de fenêtre</div>
+                        <div class="answers-item">b. Un point de mise en page</div>
+                        <div class="answers-item">c. Un bucket de tailles</div>
+                        <div class="answers-item correct">d. Un point d'arrêt</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ La classe de taille de fenêtre de largeur compacte fait généralement référence à des appareils plus petits, comme des téléphones en mode Portrait.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ L'API ___ simplifie l'implémentation des mises en page adaptatives.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. SizeClass</div>
+                        <div class="answers-item">b. WindowSizeState</div>
+                        <div class="answers-item">c. SizeBucket</div>
+                        <div class="answers-item correct">d. WindowSizeClass</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Un rail de navigation convient souvent aux mises en page de largeur ___.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. compact</div>
+                        <div class="answers-item">b. standard</div>
+                        <div class="answers-item correct">c. moyen</div>
+                        <div class="answers-item">d. développé</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Lorsque vous créez des applications avec des mises en page adaptatives, vous ne devez utiliser qu'un seul aperçu pour chaque écran.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ La mise en page "Liste/Détail" nécessite un retour en arrière sur les écrans de petit format, mais pas sur ceux affichant simultanément la liste et les écrans détaillés.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ Supposons que vous ayez une application de contacts qui affiche une liste de contacts et dispose d'informations complémentaires à afficher pour chaque contact. Comment faire pour adapter l'interface utilisateur à différentes tailles d'écran ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Utilisez la mise en page "Liste/Détails" pour afficher un ou deux volets côte à côte en fonction de la largeur d'écran disponible.</div>
+                        <div class="answers-item">b. Les éléments de la liste doivent occuper toute la largeur de l'écran, indépendamment de sa largeur.</div>
+                        <div class="answers-item">c. Le bouton "Haut" doit toujours s'afficher dans l'application. Tout clic sur ce bouton doit permettre de quitter l'application.</div>
+                        <div class="answers-item">d. Lorsque vous faites pivoter l'appareil, l'élément sélectionné dans la liste (et les informations correspondantes qui s'affichent) doit être réinitialisé pour devenir le premier élément de la liste.</div>
+                        <div class="answers-item">e. Il est nécessaire d'utiliser le composant Navigation de Jetpack pour que l'interface utilisateur s'adapte à diverses tailles d'écran.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ Vous pouvez configurer les tests pour qu'ils n'exécutent que des fonctions de test avec des annotations personnalisées en configurant ___.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. le module</div>
+                        <div class="answers-item">b. le package</div>
+                        <div class="answers-item">c. la classe Instrumentation</div>
+                        <div class="answers-item correct">d. les arguments Instrumentation</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Récupérer des données sur Internet ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="RDI">Récupérer des données sur Internet</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Avec la programmation simultanée, le code peut s'exécuter dans un ordre différent de celui dans lequel il a été écrit.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Complétez la phrase : Le thread <span class="correct">main</span> est chargé d'afficher l'interface utilisateur répondant aux entrées utilisateur.</p>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Parmi les affirmations suivantes concernant les contextes de coroutine, lesquelles sont vraies ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Dispatchers.Default est le meilleur choix pour les tâches de longue durée impliquant la lecture et l'écriture de grandes quantités de données.</div>
+                        <div class="answers-item correct">b. Dispatchers.Main peut être utilisé pour mettre à jour l'interface utilisateur, mais pas pour les tâches de longue durée.</div>
+                        <div class="answers-item correct">c. Job contrôle le cycle de vie d'une coroutine.</div>
+                        <div class="answers-item correct">d. Dispatchers.IO est optimisé pour les E/S réseau, entre autres tâches en arrière-plan.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ launch() et async() sont des fonctions d'extension de ___, qui effectue le suivi des coroutines qu'il crée.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. CoroutineScope</div>
+                        <div class="answers-item">b. Job</div>
+                        <div class="answers-item">c. Dispatcher</div>
+                        <div class="answers-item">d. CoroutineContext</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Parmi les affirmations suivantes concernant la simultanéité structurée ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Si une coroutine est annulée, les coroutines enfants doivent également être annulées.</div>
+                        <div class="answers-item">b. Un champ d'application parent peut être terminé avant qu'un ou plusieurs de ses enfants ne le soient.</div>
+                        <div class="answers-item">c. Un échec doit se propager vers le bas sans annuler la coroutine parente.</div>
+                        <div class="answers-item correct">d. Les coroutines doivent être lancées à partir d'un champ d'application de coroutine.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Parmi les affirmations suivantes concernant les services Web, lesquelles sont vraies ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. GET, POST et DELETE sont tous des exemples d'opérations HTTP.</div>
+                        <div class="answers-item correct">b. Une URL est un type d'URI, mais tous les URI ne sont pas des URL.</div>
+                        <div class="answers-item">c. Les services RESTful fournissent toujours une réponse au format XML.</div>
+                        <div class="answers-item">d. Retrofit est une bibliothèque tierce qui permet de gérer JSON à partir d'un service Web.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Retrofit est une bibliothèque tierce qui permet à votre application d'envoyer des requêtes à un service Web ___.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. XML</div>
+                        <div class="answers-item">b. Socket</div>
+                        <div class="answers-item correct">c. RESTful</div>
+                        <div class="answers-item">d. JSON</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ Une méthode recommandée pour effectuer une requête réseau Retrofit consiste à lancer une coroutine dans viewModelScope.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ Pour autoriser votre application à se connecter à Internet, ajoutez l'autorisation android.permission.INTERNET dans le fichier ___.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. MainActivity</div>
+                        <div class="answers-item">b. build.gradle</div>
+                        <div class="answers-item correct">c. Fichier manifeste Android</div>
+                        <div class="answers-item">d. ViewModel</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ Le processus qui consiste à transformer un résultat JSON en données utilisables, comme c'est le cas avec Gson, est appelé ___ JSON.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Sérialisation</div>
+                        <div class="answers-item">b. Encodage</div>
+                        <div class="answers-item">c. Conversion en cours...</div>
+                        <div class="answers-item correct">d. Analyse</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Charger et afficher des images depuis Internet ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="CAII">Charger et afficher des images depuis Internet</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Laquelle de ces méthodes ou opérations HTTP n'est pas courante ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. OBTENIR</div>
+                        <div class="answers-item">b. PUBLIER</div>
+                        <div class="answers-item">c. SUPPRIMER</div>
+                        <div class="answers-item correct">d. SET</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ La réponse d'un service Web REST est couramment formatée dans l'un des formats de transfert de données courants tels que XML ou JSON.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Parmi les affirmations suivantes concernant la bibliothèque Retrofit, laquelle est fausse ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Il s'agit d'une bibliothèque cliente.</div>
+                        <div class="answers-item">b. Elle permet à votre application d'envoyer des requêtes à un service Web REST.</div>
+                        <div class="answers-item correct">c. Elle convertit les objets Kotlin en objets JSON.</div>
+                        <div class="answers-item">d. Il s'agit d'une bibliothèque tierce.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Parmi les propositions suivantes, laquelle s'applique à un modèle Singleton ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Les déclarations object sont utilisées pour déclarer des objets singleton dans Kotlin.</div>
+                        <div class="answers-item">b. S'assure qu'une seule et unique instance d'un objet est créée</div>
+                        <div class="answers-item">c. Dispose d'un point d'accès global à cet objet.</div>
+                        <div class="answers-item correct">d. Toutes les réponses ci-dessus</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Chaque objet JSON contient les éléments suivants :</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Un ensemble de paires clé-valeur séparées par le signe deux-points.</div>
+                        <div class="answers-item correct">b. Un ensemble de paires clé-valeur séparées par une virgule.</div>
+                        <div class="answers-item">c. Un ensemble de paires clé-valeur séparées par un point-virgule.</div>
+                        <div class="answers-item">d. Aucune des réponses ci-dessus</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Conformément aux consignes d'architecture recommandées pour Android, une application doit contenir les éléments suivants :</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Une couche d'UI</div>
+                        <div class="answers-item">b. Une couche de domaine</div>
+                        <div class="answers-item correct">c. Une couche de données</div>
+                        <div class="answers-item">d. Une couche d'entreprise</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Quels sont les avantages de l'injection de dépendances (DI) dans votre application ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Aide à la réutilisation du code</div>
+                        <div class="answers-item correct">b. Facilite la refactorisation</div>
+                        <div class="answers-item correct">c. Aide avec les tests</div>
+                        <div class="answers-item">d. Rend votre application plus rapide</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ Si votre application comporte plusieurs types de sources de données, elles doivent toutes être stockées dans le même dépôt pour plus de simplicité.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ Parmi les éléments suivants, lequel permet de remplacer le coordinateur Main par TestDispatcher dans un test unitaire local ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. runTest</div>
+                        <div class="answers-item">b. runBlocking</div>
+                        <div class="answers-item">c. Distpatchers.resetMain()</div>
+                        <div class="answers-item correct">d. Dispatchers.setMain()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ La fonction runTest() peut être utilisée pour tester les fonctions suspend.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Présentation de SQL ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="SQL">Présentation de SQL</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Parmi les affirmations suivantes concernant les bases de données relationnelles et SQLite, lesquelles sont vraies ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Le référencement de la clé primaire d'une table dans une autre vous permet de modéliser les relations entre les tables.</div>
+                        <div class="answers-item">b. Une base de données SQLite est composée de colonnes, elles-mêmes composées de tables et de lignes.</div>
+                        <div class="answers-item">c. Chaque table de données doit comporter au moins une clé étrangère.</div>
+                        <div class="answers-item correct">d. Les lignes contiennent les éléments individuels de la base de données.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Il est facultatif de terminer une instruction SQL par un point-virgule.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Si vous souhaitez calculer la somme de toutes les valeurs d'une colonne de base de données, qu'utilisez-vous ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Une fonction d'agrégation</div>
+                        <div class="answers-item">b. WHERE clause</div>
+                        <div class="answers-item">c. Un mot clé DISTINCT</div>
+                        <div class="answers-item">d. Une clause LIMIT</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Quelle instruction SELECT renvoie le nombre d'adresses e-mail uniques des messages dans le dossier de spam ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. SELECT COUNT(DISTINCT folder) FROM email WHERE spam != sender;</div>
+                        <div class="answers-item">b. SELECT DISTINCT COUNT(sender) FROM email WHERE folder = 'spam';</div>
+                        <div class="answers-item correct">c. SELECT COUNT(DISTINCT sender) FROM email WHERE folder = 'spam';</div>
+                        <div class="answers-item">d. SELECT DISTINCT COUNT('spam') FROM email WHERE sender = folder;</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ L'instruction SQL SELECT * FROM contacts WHERE name LIKE '%Milton' renvoie toutes les lignes dont la valeur de la colonne "name" commence par Milton.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Parmi les affirmations suivantes concernant GROUP BY et ORDER BY, lesquelles sont vraies ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. La clause ORDER BY précède la clause GROUP BY.</div>
+                        <div class="answers-item correct">b. Dans une clause ORDER BY, l'ordre décroissant est sélectionné par défaut.</div>
+                        <div class="answers-item">c. Si une requête contient une clause GROUP BY, elle remplace la clause ORDER BY.</div>
+                        <div class="answers-item correct">d. Les clauses ORDER BY et GROUP BY peuvent toutes deux accepter plusieurs colonnes.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ La condition WHERE NOT read = false et la condition WHERE read != true sont équivalentes.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ La clause LIMIT LIMIT 30 SKIP 60 renvoie :</p>
+                    <div class="answers">
+                        <div class="answers-item">a. 60 lignes</div>
+                        <div class="answers-item">b. Les lignes 31 à 60</div>
+                        <div class="answers-item correct">c. Les lignes 61 à 90</div>
+                        <div class="answers-item">d. 90 lignes</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ Une instruction UPDATE utilise une clause ___ pour attribuer des valeurs aux colonnes.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. WHERE</div>
+                        <div class="answers-item correct">b. SET</div>
+                        <div class="answers-item">c. ASSIGN</div>
+                        <div class="answers-item">d. LIKE</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ Les instructions UPDATE et DELETE peuvent inclure une clause WHERE et peuvent affecter plusieurs lignes.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION :  ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="URPD">Utiliser Room pour la persistance des données</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Parmi les affirmations suivantes concernant l'annotation @Query, laquelle est fausse ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. L'annotation @Query est utilisée avec une méthode dans la DAO.</div>
+                        <div class="answers-item">b. L'annotation @Query correspond à une requête SELECT.</div>
+                        <div class="answers-item">c. L'annotation @Query peut transmettre des arguments dans une instruction SQL en plaçant deux points avant son nom.</div>
+                        <div class="answers-item correct">d. L'annotation @Query ne peut être utilisée qu'avec une fonction de suspension.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Parmi les affirmations suivantes concernant la DAO, lesquelles sont vraies ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Les fonctions DAO utilisent des annotations telles que @Insert et @Update, qui correspondent à une opération sur la base de données.</div>
+                        <div class="answers-item">b. Les fonctions DAO peuvent renvoyer un flux.</div>
+                        <div class="answers-item">c. Les instances de classes DAO sont référencées dans la classe AppDatabase.</div>
+                        <div class="answers-item correct">d. Toutes les réponses ci-dessus</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ La classe Database, héritant de la classe RoomDatabase, est chargée ___.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. D'instancier la base de données et de fournir l'accès au DAO</div>
+                        <div class="answers-item">b. De représenter des tables de données individuelles.</div>
+                        <div class="answers-item">c. De définir des fonctions correspondant aux instructions SQL, telles que les requêtes SELECT.</div>
+                        <div class="answers-item">d. De fournir des données à l'interface utilisateur.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Le DAO sert à :</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Conserver la référence aux modèles de vues et à la base de données.</div>
+                        <div class="answers-item correct">b. Définir des fonctions correspondant aux instructions SQL, telles que les requêtes SELECT et INSERT.</div>
+                        <div class="answers-item">c. Fournir une méthode de fabrique pour créer une instance de base de données.</div>
+                        <div class="answers-item">d. Créer une instance de base de données.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Pourquoi devez-vous utiliser la fonction synchronized() lorsque vous créez la base de données ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Elle vous permet de créer plusieurs copies de la base de données.</div>
+                        <div class="answers-item correct">b. Elle vous permet d'accéder simultanément et de manière sécurisée au code de plusieurs threads.</div>
+                        <div class="answers-item correct">c. Elle permet d'éviter les conditions de concurrence.</div>
+                        <div class="answers-item correct">d. Elle garantit qu'un seul thread à la fois peut entrer dans le bloc de code.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Vous pouvez utiliser les annotations @Insert et @Delete sans fournir d'instruction SQL.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Complétez la phrase : Pour gérer les conflits pouvant survenir lors de l'insertion dans une base de données, vous pouvez transmettre un paramètre <span class="correct">onConflict</span>, tel que IGNORE, à l'annotation @Insert.</p>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ Sélectionnez toutes les affirmations vraies concernant l'outil d'inspecteur de bases de données :</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Il vous permet d'inspecter, d'interroger et de modifier les bases de données de votre application pendant son exécution.</div>
+                        <div class="answers-item">b. Il fonctionne avec d'autres bibliothèques SQLite que vous intégrez à votre application.</div>
+                        <div class="answers-item correct">c. Il est particulièrement utile pour déboguer des bases de données.</div>
+                        <div class="answers-item correct">d. Il fonctionne avec SQLite standard et avec des bibliothèques basées sur SQLite, telles que Room.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ Les entités représentent des tables de données individuelles dans la base de données Room.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ Parmi les affirmations suivantes concernant la clé primaire, laquelle est fausse ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vous pouvez utiliser la clé primaire pour identifier de manière unique chaque enregistrement/entrée dans vos tables de la base de données.</div>
+                        <div class="answers-item">b. Une fois la clé primaire attribuée, vous ne pouvez plus la modifier.</div>
+                        <div class="answers-item correct">c. Room génère par défaut une valeur de clé primaire incrémentée pour chaque entité.</div>
+                        <div class="answers-item">d. La clé primaire représente l'objet de l'entité tant qu'il existe dans la base de données.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Stocker des données et y accéder à l'aide de clés avec DataStore ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="SDACD">Stocker des données et y accéder à l'aide de clés avec DataStore</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Les implémentations de DataStore sont les suivantes :</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Proto</div>
+                        <div class="answers-item correct">b. Préférences</div>
+                        <div class="answers-item">c. Pièce</div>
+                        <div class="answers-item">d. SQLite</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Preferences DataStore utilise un schéma prédéfini.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Quelle est la fonction fournie par DataStore pour modifier le DataStore ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. preferencesDataStore()</div>
+                        <div class="answers-item">b. updatePreferences()</div>
+                        <div class="answers-item correct">c. edit()</div>
+                        <div class="answers-item">d. map()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Preferences DataStore utilise des clés pour accéder aux valeurs stockées.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Quelle exception peut se produire lorsque vous tentez de lire les données d'un Preferences DataStore ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. IllegalArgumentException</div>
+                        <div class="answers-item correct">b. IOException</div>
+                        <div class="answers-item">c. IllegalStateException</div>
+                        <div class="answers-item">d. NumberFormatException</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Planifier des tâches avec WorkManager ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="PTW">Planifier des tâches avec WorkManager</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Quel outil vous permet de visualiser, de surveiller et de déboguer les Workers de votre application ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Profiler</div>
+                        <div class="answers-item correct">b. Background Task Inspector</div>
+                        <div class="answers-item">c. Logcat</div>
+                        <div class="answers-item">d. Gestionnaire d'appareils</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Parmi les options suivantes, lesquelles sont des états de fonctionnement terminal valides ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. ANNULÉ</div>
+                        <div class="answers-item">b. SUPPRIMÉE</div>
+                        <div class="answers-item correct">c. ÉCHEC</div>
+                        <div class="answers-item correct">d. RÉUSSITE</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Parmi les options suivantes, laquelle est un type de demande de travail valide ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. OneTimeWorkRequest</div>
+                        <div class="answers-item">b. SingleWorkRequest</div>
+                        <div class="answers-item">c. RepeatingWorkRequest</div>
+                        <div class="answers-item correct">d. PeriodicWorkRequest</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ La création et l'ajout à la file d'attente de plusieurs tâches dépendantes, ainsi que l'ordre dans lequel elles doivent s'exécuter, est appelé "association".</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Parmi les options suivantes, dans quelle situation les contraintes de travail sont-elles utiles ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Pour vérifier qu'un mode de paiement valide est enregistré sur l'appareil de l'utilisateur avant que le travail ne soit effectué.</div>
+                        <div class="answers-item">b. Pour vérifier l'heure avant l'exécution du travail.</div>
+                        <div class="answers-item correct">c. Pour vérifier que l'appareil est connecté à un réseau Wi-Fi avant de télécharger une grande quantité de données d'application.</div>
+                        <div class="answers-item">d. Pour vérifier que l'application a été ouverte un certain nombre de fois avant l'exécution du travail.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Parmi les options suivantes, laquelle permet de transmettre des données d'entrée à un Worker ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Transmettre les données en tant qu'argument lorsque vous appelez la fonction doWork().</div>
+                        <div class="answers-item correct">b. Utiliser un objet Data pour transmettre des paires clé/valeur.</div>
+                        <div class="answers-item">c. Transmettre les données en tant que String, mais elles doivent comporter moins de 140 caractères.</div>
+                        <div class="answers-item">d. L'attribuer à la variable worker.inputData.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Une fois le travail ajouté à la file d'attente, vous pouvez vérifier son état par ___.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Nom</div>
+                        <div class="answers-item correct">b. ID</div>
+                        <div class="answers-item correct">c. Tag</div>
+                        <div class="answers-item">d. Type de travail</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ Le Background Task Inspector vous permet d'arrêter les Workers pendant leur exécution.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ Quel compilateur de workers est recommandé pour tester les CoroutineWorkers ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. OneTimeWorkRequestBuilder</div>
+                        <div class="answers-item">b. PeriodicWorkRequestBuilder</div>
+                        <div class="answers-item">c. TestWorkerBuilder</div>
+                        <div class="answers-item correct">d. TestListenableWorkerBuilder</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ Lors du test des mises en œuvre de workers, vous pouvez les appeler directement avec doWork() au lieu de les ajouter à la file d'attente.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Vues Android et Compose dans les vues ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="VAC">Vues Android et Compose dans les vues</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Quelle langue est utilisée pour créer les mises en page de type "View" ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. HTML</div>
+                        <div class="answers-item">b. Kotlin</div>
+                        <div class="answers-item correct">c. XML</div>
+                        <div class="answers-item">d. Java</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Lors de la création d'une application avec des vues, par lequel des éléments suivants doit être remplacé le concept de composable "écran" ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Fragment</div>
+                        <div class="answers-item">b. ViewModel</div>
+                        <div class="answers-item">c. Composable</div>
+                        <div class="answers-item">d. Activité</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Les liaisons de vue permettent d'accéder aux éléments View déclarés au format XML et d'interagir avec eux.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Dans quelle méthode de cycle de vie Fragment la liaison des vues est-elle gonflée ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. onViewCreated()</div>
+                        <div class="answers-item correct">b. onCreateView()</div>
+                        <div class="answers-item">c. onStart()</div>
+                        <div class="answers-item">d. onResume()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Les composants de la vue sont accessibles avant le gonflement de la liaison des vues.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vrai</div>
+                        <div class="answers-item correct">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">6/ Un élément ComposeView est un(e) :</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Vue pouvant héberger une vue Android dans une interface utilisateur Compose.</div>
+                        <div class="answers-item correct">b. Vue Android pouvant héberger le contenu de l'interface utilisateur de Jetpack Compose dans une mise en page de type View</div>
+                        <div class="answers-item">c. Vue Android pouvant héberger une vue Android dans une mise en page de type View.</div>
+                        <div class="answers-item">d. Vue pouvant héberger l'interface utilisateur de Compose dans une interface utilisateur Compose.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">7/ Jetpack Compose et le système View peuvent coexister dans votre codebase.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">8/ ComposeView utilise sa méthode ___ pour afficher les éléments Compose à l'écran.</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Composable()</div>
+                        <div class="answers-item correct">b. setContent()</div>
+                        <div class="answers-item">c. setComposeContent()</div>
+                        <div class="answers-item">d. displayComposable()</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">9/ L'interopérabilité avec les vues a été conçue dès le départ dans Jetpack Compose.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">10/ L'indicateur qui permet à Android Studio de fonctionner avec Compose est le suivant :</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Au niveau du projet, utilisez buildFeatures { compose true }</div>
+                        <div class="answers-item correct">b. Au niveau de l'application, utilisez buildFeatures { compose true }</div>
+                        <div class="answers-item">c. Au niveau du projet, utilisez buildFeatures { enableCompose true }</div>
+                        <div class="answers-item">d. Au niveau de l'application, utilisez buildFeatures { enableCompose true }</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- SECTION : Vues dans Compose ----------------------->
+
+        <div class="section">
+            <h2 class="section-title" id="VDC">Vues dans Compose</h2>
+            <div class="section-questions">
+                <div class="question">
+                    <p class="question-title">1/ Quel composable permet d'implémenter l'interopérabilité d'une vue ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. InputRow</div>
+                        <div class="answers-item">b. Column</div>
+                        <div class="answers-item">c. TextInputRow</div>
+                        <div class="answers-item correct">d. AndroidView</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">2/ Qu'est-ce qu'un élément AndroidView ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Un composable qui héberge un élément ou une hiérarchie de type View</div>
+                        <div class="answers-item">b. Une vue Android qui héberge le contenu de l'UI Jetpack Compose dans une mise en page de type View</div>
+                        <div class="answers-item">c. Une vue Android qui héberge une vue Android dans une mise en page de type View</div>
+                        <div class="answers-item">d. Une vue Compose qui héberge le contenu de l'UI Jetpack Compose dans une interface utilisateur Compose</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">3/ Parmi les éléments suivants, lesquels sont des paramètres du composable AndroidView ?</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. factory</div>
+                        <div class="answers-item">b. inputLabel</div>
+                        <div class="answers-item correct">c. update</div>
+                        <div class="answers-item correct">d. modifier</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">4/ Le rappel update du composable AndroidView est appelé une fois que la vue correspondante a été gonflée.</p>
+                    <div class="answers">
+                        <div class="answers-item correct">a. Vrai</div>
+                        <div class="answers-item">b. Faux</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p class="question-title">5/ Quelle est la fonction du lambda factory du composable AndroidView ?</p>
+                    <div class="answers">
+                        <div class="answers-item">a. Décore et améliore le composable AndroidView</div>
+                        <div class="answers-item">b. Exécute le code après le gonflement de la vue</div>
+                        <div class="answers-item correct">c. Crée la vue</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
