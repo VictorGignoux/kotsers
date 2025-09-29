@@ -79,7 +79,7 @@ h2{
 }
 
 .answers-item:not(.selected):hover{
-    background-color: #efefef !important;
+    color: #2d663c;
 }
 
 .correct{

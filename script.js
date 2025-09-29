@@ -3,21 +3,47 @@ document.addEventListener('DOMContentLoaded', function(){
     const mode = sessionStorage.getItem('mode');
 
     const answers = document.querySelectorAll('.answers-item');
+    const nb_answers = answers.length;
 
+    const questions = document.querySelectorAll('.question');
+    const nb_questions = questions.length;
+
+
+    // valide ou pas quand on clique sur une question
     answers.forEach(answer => {
         answer.addEventListener('click', function(){
             if(mode === "test"){
-                answer.classList.add('selected');
-                if (answer.classList.contains('correct')) {
-                    answer.style.backgroundColor = '#D6F1DF';
-                }
-                else{
-                    answer.style.backgroundColor = '#ff6767';
+                if(answer.classList.contains("selected")){
+                    answer.classList.remove('selected');
+                    answer.style.backgroundColor = '#FFFFFF';
+                } else {
+                    answer.classList.add('selected');
+                    answer.style.backgroundColor = '#DDDDDD';
                 }
             }
         });
     });
 });
+
+function validate(){
+    sessionStorage.setItem("mode", "validate")
+    const answers = document.querySelectorAll('.answers-item');
+    answers.forEach(answer => {
+        if (answer.classList.contains("selected")) {
+            // séléctionné et correct
+            if(answer.classList.contains('correct')){
+                answer.style.backgroundColor = '#D6F1DF';
+            } 
+            // séléctionné et pas correct
+            else {
+                answer.style.backgroundColor = '#ff6767';
+            }
+        }
+        else if(answer.classList.contains("correct")){
+            answer.style.backgroundColor = '#caf1ff';
+        }
+    });
+}
 
 function goto(id){
 
