@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
     sessionStorage.setItem('mode', 'test');
-    const mode = sessionStorage.getItem('mode');
 
     const answers = document.querySelectorAll('.answers-item');
     const nb_answers = answers.length;
@@ -9,9 +8,10 @@ document.addEventListener('DOMContentLoaded', function(){
     const nb_questions = questions.length;
 
 
-    // valide ou pas quand on clique sur une question
+    // select an answer in testing
     answers.forEach(answer => {
         answer.addEventListener('click', function(){
+            const mode = sessionStorage.getItem('mode');
             if(mode === "test"){
                 if(answer.classList.contains("selected")){
                     answer.classList.remove('selected');
@@ -25,26 +25,65 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 });
 
+// validate answers and calcualte score for each section
 function validate(){
     sessionStorage.setItem("mode", "validate")
     const answers = document.querySelectorAll('.answers-item');
-    answers.forEach(answer => {
-        if (answer.classList.contains("selected")) {
-            // séléctionné et correct
-            if(answer.classList.contains('correct')){
-                answer.style.backgroundColor = '#D6F1DF';
-            } 
-            // séléctionné et pas correct
-            else {
-                answer.style.backgroundColor = '#ff6767';
+
+    let total_score = 0;
+    let total_answers = 0;
+
+    // calculate score
+    const sections = document.querySelectorAll(".section");
+    sections.forEach(section => {
+        const questions = section.querySelectorAll(".question");
+        let score = 0;
+        const MAXSCORE = questions.length;
+        total_answers += MAXSCORE;
+        questions.forEach(question => {
+            let isCorrect = true;
+            const answers = question.querySelectorAll(".answers-item");
+            if(answers.length == 0){
+                // -------------------- TODO manage input questions -----------------------
+                isCorrect = false;
             }
+            // validate answer
+            answers.forEach(answer => {
+                if (answer.classList.contains("selected")) {
+                    // selected and correct
+                    if(answer.classList.contains('correct')){
+                        answer.style.backgroundColor = '#D6F1DF';
+                    } 
+                    // selected but not correct
+                    else {
+                        answer.style.backgroundColor = '#ff6767';
+                        isCorrect = false;
+                    }
+                }
+                // missed answer
+                else if(answer.classList.contains("correct")){
+                    answer.style.backgroundColor = '#caf1ff';
+                    isCorrect = false;
+                }
+            });
+            // increase score if correct
+            if(isCorrect){
+                score++;
+            }
+        });
+        const title_score = section.querySelector(".title-score");
+        if(title_score == null){
+            console.log(section);
         }
-        else if(answer.classList.contains("correct")){
-            answer.style.backgroundColor = '#caf1ff';
-        }
+        title_score.innerHTML = score + "/" + MAXSCORE;
+        total_score += score;
     });
+
+    const total_score_span = document.getElementById("total-score");
+    total_score_span.innerHTML = total_score + "/" + total_answers;
 }
 
+// slide to the selected section
 function goto(id){
 
     if(id === "top"){
@@ -71,11 +110,14 @@ function changeMode(){
     const corrects = document.querySelectorAll('.correct');
     const answers = document.querySelectorAll('.answers-item');
     const button_validate = document.getElementById("validate");
+    const button_reset = document.getElementById("reset");
 
     // passe en mode réponses
-    if(mode == 'test'){
+    if(mode == 'test' || mode == 'validate'){
         sessionStorage.setItem('mode', 'réponses');
-        btn.innerHTML = "Répondre aux QCM";
+        btn.innerHTML = "Répondre au QCM";
+
+        // show corrects answers
         answers.forEach(answer => {
             answer.style.backgroundColor = '#FFF';
             answer.classList.remove('selected');
@@ -84,12 +126,16 @@ function changeMode(){
             elm.style.backgroundColor = '#D6F1DF';
         });
 
+        // hide validate button
         button_validate.style.opacity = '0';
+        button_reset.style.opacity = '0';
     }
     // passe en mode test
     else{
         sessionStorage.setItem('mode', 'test');
         btn.innerHTML = "Voir les réponses";
+
+        // remove selected answers
         answers.forEach(answer => {
             answer.style.backgroundColor = '#FFF';
             answer.classList.remove('selected');
@@ -98,6 +144,18 @@ function changeMode(){
             elm.style.backgroundColor = '#FFF';
         });
 
+        // show validate button
         button_validate.style.opacity = '1';
+        button_reset.style.opacity = '1';
     }
+}
+
+// restart the QCM
+function reset() {
+    const answers = document.querySelectorAll(".answers-item");
+    answers.forEach(answer => {
+        answer.style.backgroundColor = "#FFFFFF";
+        answer.classList.remove("selected");
+    });
+    sessionStorage.setItem("mode", "test");
 }

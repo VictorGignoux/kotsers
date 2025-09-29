@@ -145,7 +145,7 @@ button:hover{
 
 #floating-elements{
     position: fixed;
-    top: 70vh;
+    bottom: 6vh;
     left: 4vw;
     display: flex;
     justify-content: center;
@@ -184,4 +184,14 @@ button:hover{
     width: 1vw;
     height: 1vw;
     border-radius: 100%;
+}
+
+.title-score{
+    font-size: 2rem;
+    margin-left: 1vw;
+}
+
+#total-score{
+    font-size: 3rem;
+    margin-bottom: 3vh;
 }
