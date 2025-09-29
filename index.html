@@ -40,9 +40,25 @@
 
         <button id="up" type="button" onclick="goto('top')"><img src="./up.svg" alt="up"></button>
 
-        <button id="mode" type="button" onclick="changeMode()">Voir les réponses</button>
-
-        <button id="validate" type="button" onclick="validate()">Valider</button>
+        <div id="floating-elements">
+            <div id="legend">
+                <div class="legend-line">
+                    <div style="background-color: #D6F1DF;" class="legend-color"></div>
+                    <p>réponses correctes</p>
+                </div>
+                <div class="legend-line">
+                    <div style="background-color: #caf1ff;" class="legend-color"></div>
+                    <p>réponses correctes manquantes</p>
+                </div>
+                <div class="legend-line">
+                    <div style="background-color: #ff6767;" class="legend-color"></div>
+                    <p>réponses incorrectes</p>
+                </div>
+            </div>
+            <button id="mode" class="btn" type="button" onclick="changeMode()">Voir les réponses</button>
+            <button id="validate" class="btn" type="button" onclick="validate()">Valider</button>
+        </div>
+        
 
         <!----------------------- SECTION : Introduction à la programmation ----------------------->
 

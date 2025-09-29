@@ -141,10 +141,21 @@ button:hover{
     background-color: #2ba584;
 }
 
-#mode{
+/* FLOATING ELEMENTS */
+
+#floating-elements{
     position: fixed;
-    top: 90vh;
-    left: 6vw;
+    top: 70vh;
+    left: 4vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+/* BUTTONS */
+
+.btn{
     background-color: var(--title);
     color: #FFF;
     border: none;
@@ -152,6 +163,25 @@ button:hover{
     border-radius: 0.6rem;
 }
 
-#mode:hover{
+.btn:hover{
     background-color: #2ba584;
+}
+
+#legend{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1vh;
+    margin-bottom: 3vh;
+}
+
+.legend-line{
+    display: flex;
+    gap: 0.3vw;
+}
+
+.legend-color{
+    width: 1vw;
+    height: 1vw;
+    border-radius: 100%;
 }

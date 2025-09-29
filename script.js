@@ -70,8 +70,10 @@ function changeMode(){
     const btn = document.getElementById("mode");
     const corrects = document.querySelectorAll('.correct');
     const answers = document.querySelectorAll('.answers-item');
+    const button_validate = document.getElementById("validate");
 
-    if(mode === 'test'){
+    // passe en mode réponses
+    if(mode == 'test'){
         sessionStorage.setItem('mode', 'réponses');
         btn.innerHTML = "Répondre aux QCM";
         answers.forEach(answer => {
@@ -81,7 +83,10 @@ function changeMode(){
         corrects.forEach((elm) => {
             elm.style.backgroundColor = '#D6F1DF';
         });
+
+        button_validate.style.opacity = '0';
     }
+    // passe en mode test
     else{
         sessionStorage.setItem('mode', 'test');
         btn.innerHTML = "Voir les réponses";
@@ -92,5 +97,7 @@ function changeMode(){
         corrects.forEach((elm) => {
             elm.style.backgroundColor = '#FFF';
         });
+
+        button_validate.style.opacity = '1';
     }
 }
