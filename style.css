@@ -18,6 +18,7 @@ body{
     display: flex;
     flex-direction: column;
     background-color: var(--background);
+    overflow-x: hidden;
 }
 
 h1{
@@ -36,8 +37,14 @@ h2{
 
 #content{
     display: flex;
+    width: 200vw;
+}
+
+#qcm{
+    display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
 }
 
 .section{
@@ -151,6 +158,7 @@ button:hover{
     justify-content: center;
     flex-direction: column;
     gap: 1vh;
+    transition: 0.2s;
 }
 
 /* BUTTONS */
@@ -194,4 +202,64 @@ button:hover{
 #total-score{
     font-size: 3rem;
     margin-bottom: 3vh;
+}
+
+#answerer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    gap: 0.5vw;
+}
+
+#answerer-container{
+    display: flex;
+    transition: 0.2s;
+}
+
+#answerer-input{
+    padding: 1.2vh 1.2vw;
+    font-size: 1.4rem;
+    border: 2px solid var(--title);
+    width: 40vw;
+    border-radius: 0.5rem;
+    transition: 0.2s;
+}
+
+#answerer-btn{
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#answerer-btn img{
+    border-radius: 1rem;
+    width: 3vw;
+    height: 3vw;
+}
+
+#answerer-answers{
+    font-size: 1.4rem;
+    position: absolute;
+    top: 60vh;
+    width: 45vw;
+    border-left: 2px solid var(--title);
+    padding: 2vh 3vw;
+    transition: 0.3s;
+}
+
+#slide-btn{
+    width: 2vw;
+    height: 2vw;
+    border-radius: 100%;
+    border: none;
+    background-color: var(--title);
+    color: var(--background);
+    position: fixed;
+    right: 3vw;
+    top: 4vh;
 }
