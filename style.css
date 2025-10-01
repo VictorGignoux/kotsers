@@ -267,6 +267,10 @@ button:hover{
     top: 4vh;
 }
 
+.space{
+    height: 4vh;
+}
+
 /* RESPONSIVE */
 
 @media screen and (max-width: 1000px) {

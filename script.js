@@ -212,12 +212,17 @@ function getAnswers() {
         const title = question.querySelector(".question-title");
         const title_parts = title.innerHTML.split(" ");
 
-        if(compare(title_parts, input_parts) > 50){
+        const answerer_answers = document.getElementById("answerer-answers");
+        answerer_answers.innerHTML = "";
+
+        if(compare(title_parts, input_parts) > 20){
             // get answers
             const answers = question.querySelectorAll(".correct")
-            const answerer_answers = document.getElementById("answerer-answers");
-            answerer_answers.innerHTML = "";
             
+            answerer_answers.append(title.innerHTML)
+            let space = document.createElement('div');
+            space.classList.add('space');
+            answerer_answers.append(space);
             answers.forEach(answer => {
                 let elm = document.createElement("p");
                 elm.innerHTML = answer.innerHTML;
