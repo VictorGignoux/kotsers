@@ -37,7 +37,7 @@ h2{
 
 #content{
     display: flex;
-    width: 200vw;
+    width: 100vw;
 }
 
 #qcm{
@@ -209,17 +209,17 @@ button:hover{
 
 #answerer{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    min-height: 20vh;
     gap: 0.5vw;
+    margin-bottom: 5vh;
 }
 
 #answerer-container{
     display: flex;
-    transition: 0.2s;
 }
 
 #answerer-input{
@@ -228,7 +228,6 @@ button:hover{
     border: 2px solid var(--title);
     width: 40vw;
     border-radius: 0.5rem;
-    transition: 0.2s;
 }
 
 #answerer-btn{
@@ -247,12 +246,14 @@ button:hover{
 
 #answerer-answers{
     font-size: 1.4rem;
-    position: absolute;
-    top: 60vh;
     width: 45vw;
+}
+
+.answerer-item{
+    background-color: whitesmoke;
     border-left: 2px solid var(--title);
-    padding: 2vh 3vw;
-    transition: 0.3s;
+    padding: 2vh 2vw;
+    margin: 4vh 0;
 }
 
 #slide-btn{

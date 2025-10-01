@@ -1,17 +1,11 @@
 document.addEventListener('DOMContentLoaded', function(){
     sessionStorage.setItem('mode', 'test');
-    sessionStorage.setItem('position', 'left');
 
     const answers = document.querySelectorAll('.answers-item');
     const nb_answers = answers.length;
 
     const questions = document.querySelectorAll('.question');
     const nb_questions = questions.length;
-
-    // scroll to qcm
-    window.scrollTo({
-        left: 0,
-    });
 
     // select an answer in testing
     answers.forEach(answer => {
@@ -165,37 +159,6 @@ function reset() {
     sessionStorage.setItem("mode", "test");
 }
 
-function slide(){
-    let position = sessionStorage.getItem('position');
-    const content = document.getElementById('content');
-    const floating_elements = document.getElementById('floating-elements');
-    const width = window.innerWidth;
-    if (position === "left"){
-        // scroll to top then slide to answerer
-        window.scrollTo({
-            top: 0,
-        });
-        window.scrollTo({
-            left: width,
-            behavior: "smooth"
-        });
-        sessionStorage.setItem('position', 'right')
-
-        // hide floatings
-        floating_elements.style.opacity = '0';
-    } else {
-        // scroll
-        window.scrollTo({
-            left: 0,
-            behavior: "smooth"
-        });
-        sessionStorage.setItem("position", "left")
-
-        // show floatings
-        floating_elements.style.opacity = '1';
-    }
-}
-
 function getAnswers() {
     // get input parts
     const input = document.getElementById("answerer-input");
@@ -203,48 +166,54 @@ function getAnswers() {
 
     const questions = document.querySelectorAll(".question");
 
-    found = false;
-    let i = 0;
-    while(found == false && i < questions.length){
-
-        // get title parts
-        const question = questions[i];
+    const answerer_answers = document.getElementById("answerer-answers");
+    answerer_answers.innerHTML = "";
+    
+    questions.forEach(question => {
         const title = question.querySelector(".question-title");
         const title_parts = title.innerHTML.split(" ");
 
-        const answerer_answers = document.getElementById("answerer-answers");
-        answerer_answers.innerHTML = "";
+        if(compare(title_parts, input_parts)){
 
-        if(compare(title_parts, input_parts) > 20){
+            console.log(title)
+
             // get answers
             const answers = question.querySelectorAll(".correct")
-            
-            answerer_answers.append(title.innerHTML)
+
+            // create box
+            const answerer_item = document.createElement("div");
+            answerer_item.classList.add("answerer-item")
+
+            // add question title
+            answerer_item.append(title.innerHTML)
+
+            // add space
             let space = document.createElement('div');
             space.classList.add('space');
-            answerer_answers.append(space);
+            answerer_item.append(space);
+
+            // add answers
             answers.forEach(answer => {
                 let elm = document.createElement("p");
                 elm.innerHTML = answer.innerHTML;
-                answerer_answers.append(elm);
+                answerer_item.append(elm);
             });
 
-            found = true;
+            answerer_answers.append(answerer_item);
         }
-        i++;
-    }
+    });
 }
 
 function compare(title, input){
-    let score = 0;
-    let size = title.length;
-    input.forEach(item => {
-        if(title.includes(item)){
-            score++;
+
+    let match = false;
+    let i = 0;
+    while(match == false && i < input.length){
+        if(title.includes(input[i])){
+            return true
         }
-    });
+        i++;
+    }
 
-    const percent = score * 100 / size;
-
-    return percent;
+    return false;
 }

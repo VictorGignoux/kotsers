@@ -15,6 +15,14 @@
         <div id="qcm">
             <h1>QCM - Principes de base d'Android avec Compose</h1>
 
+            <div id="answerer">
+                <div id="answerer-container">
+                    <input id="answerer-input" type="text" name="answerer-input" placeholder="Entrez une question...">
+                    <button id="answerer-btn" type="button" onclick="getAnswers()"><img src="./post.svg" alt="post"></button>
+                </div>
+                <div id="answerer-answers"></div>
+            </div>
+
             <div id="summary">
                 <h2>Sommaire</h2>
                 <button type="button" onclick="goto('IALP')">Introduction à la programmation</button>
@@ -61,8 +69,6 @@
                 <button id="validate" class="btn" type="button" onclick="validate()">Valider</button>
                 <button id="reset" class="btn" type="button" onclick="reset()">Recommencer</button>
             </div>
-
-            <button id="slide-btn" type="button" onclick="slide()">?</button>
             
 
             <!----------------------- SECTION : Introduction à la programmation ----------------------->
@@ -2028,14 +2034,6 @@
                 </div>
                 <span class="title-score"></span>
             </div>
-        </div>
-
-        <div id="answerer">
-            <div id="answerer-container">
-                <input id="answerer-input" type="text" name="answerer-input" placeholder="Entrez une question...">
-                <button id="answerer-btn" type="button" onclick="getAnswers()"><img src="./post.svg" alt="post"></button>
-            </div>
-            <div id="answerer-answers"></div>
         </div>
     </div>
 
