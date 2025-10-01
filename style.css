@@ -110,6 +110,9 @@ h2{
     background-color: transparent;
     transition: 0.2s;
     margin: .2vh 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 #summary button:hover{
@@ -129,7 +132,7 @@ button:hover{
 #up{
     position: fixed;
     top: 92vh;
-    right: 3vw;
+    left: 95vw;
     background-color: var(--title);
     border: none;
     border-radius: 100%;
@@ -262,4 +265,41 @@ button:hover{
     position: fixed;
     right: 3vw;
     top: 4vh;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1000px) {
+    #summary{
+        width: 90vw;
+    }
+
+    .section{
+        width: 85vw;
+    }
+
+    #up{
+        display: none;
+    }
+
+    #floating-elements{
+        position: initial;
+    }
+
+    #answerer-container{
+        width: 85vw;
+    }
+
+    #answerer-input{
+        width: 100%;
+    }
+
+    #answerer-btn img{
+        width: 8vw;
+        height: 8vw;
+    }
+
+    #answerer-answers{
+        width: 80vw;
+    }
 }
