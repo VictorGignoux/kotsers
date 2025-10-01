@@ -212,7 +212,7 @@ function getAnswers() {
         const title = question.querySelector(".question-title");
         const title_parts = title.innerHTML.split(" ");
 
-        if(compare(title_parts, input_parts)){
+        if(compare(title_parts, input_parts) > 50){
             // get answers
             const answers = question.querySelectorAll(".correct")
             const answerer_answers = document.getElementById("answerer-answers");
@@ -241,5 +241,5 @@ function compare(title, input){
 
     const percent = score * 100 / size;
 
-    return percent > 50;
+    return percent;
 }
