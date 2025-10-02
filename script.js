@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
     sessionStorage.setItem('mode', 'test');
 
-    init_test();
-});
-
-function init_test(){
-    const answers = document.querySelectorAll('.answers-item');
+    answers = document.querySelectorAll('.answers-item');
     const nb_answers = answers.length;
 
     // select an answer in testing
@@ -23,7 +19,7 @@ function init_test(){
             }
         });
     });
-}
+});
 
 // validate answers and calcualte score for each section
 function validate(randomizer=false){
@@ -132,7 +128,7 @@ function changeMode(){
     const randomizer = document.getElementById('random');
 
     // passe en mode réponses
-    if(mode == 'test' || mode == 'validate'){
+    if(mode == 'test'){
         sessionStorage.setItem('mode', 'réponses');
         btn.innerHTML = "Répondre au QCM";
 
@@ -260,10 +256,10 @@ function randomizer(close_or_open){
         randomizer_validate.style.display = 'flex';
         const randomizer_next = document.getElementById("randomizer-next");
         randomizer_next.style.display = 'none';
+        reset();
     } 
     else {
         randomizer.style.display = "none";
-        init_test();
     }
 }
 
@@ -286,5 +282,18 @@ function randomizer_add_question(){
 
     randomizer_question.innerHTML = questions[rand].innerHTML;
 
-    init_test();
+    randomizer_question.querySelectorAll(".answers-item").forEach(answer => {
+        answer.addEventListener('click', function(){
+            const mode = sessionStorage.getItem('mode');
+            if(mode === "test"){
+                if(answer.classList.contains("selected")){
+                    answer.classList.remove('selected');
+                    answer.style.backgroundColor = '#FFFFFF';
+                } else {
+                    answer.classList.add('selected');
+                    answer.style.backgroundColor = '#DDDDDD';
+                }
+            }
+        });
+    });
 }

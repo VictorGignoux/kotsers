@@ -290,6 +290,7 @@ button:hover{
 
 #randomizer-container{
     min-width: 40vw;
+    max-width: 80vw;
     min-height: 20vh;
     padding: 2vh 0;
     gap: 5vh;
