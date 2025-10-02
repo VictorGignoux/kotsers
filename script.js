@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function(){
     sessionStorage.setItem('mode', 'test');
 
+    init_test();
+});
+
+function init_test(){
     const answers = document.querySelectorAll('.answers-item');
     const nb_answers = answers.length;
-
-    const questions = document.querySelectorAll('.question');
-    const nb_questions = questions.length;
 
     // select an answer in testing
     answers.forEach(answer => {
@@ -22,20 +23,31 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         });
     });
-});
+}
 
 // validate answers and calcualte score for each section
-function validate(){
-    sessionStorage.setItem("mode", "validate")
-    const answers = document.querySelectorAll('.answers-item');
-
+function validate(randomizer=false){
+    
     let total_score = 0;
     let total_answers = 0;
 
     // calculate score
-    const sections = document.querySelectorAll(".section");
+    let sections;
+    if(randomizer){
+        sections = [document.getElementById("randomizer-question")];
+    }
+    else{
+        sections = document.querySelectorAll(".section");
+    }
+
     sections.forEach(section => {
-        const questions = section.querySelectorAll(".question");
+        let questions;
+        if(randomizer){
+            questions = sections;
+        }
+        else{
+            questions = section.querySelectorAll(".question");
+        }
         let score = 0;
         const MAXSCORE = questions.length;
         total_answers += MAXSCORE;
@@ -70,16 +82,23 @@ function validate(){
                 score++;
             }
         });
-        const title_score = section.querySelector(".title-score");
-        if(title_score == null){
-            console.log(section);
+        if(!randomizer){
+            const title_score = section.querySelector(".title-score");
+            title_score.innerHTML = score + "/" + MAXSCORE;
+            total_score += score;
         }
-        title_score.innerHTML = score + "/" + MAXSCORE;
-        total_score += score;
     });
 
-    const total_score_span = document.getElementById("total-score");
-    total_score_span.innerHTML = total_score + "/" + total_answers;
+    if(!randomizer){
+        const total_score_span = document.getElementById("total-score");
+        total_score_span.innerHTML = total_score + "/" + total_answers;
+    }
+    else{
+        const randomizer_validate = document.getElementById("randomizer-validate");
+        randomizer_validate.style.display = 'none';
+        const randomizer_next = document.getElementById("randomizer-next");
+        randomizer_next.style.display = 'flex';
+    }
 }
 
 // slide to the selected section
@@ -110,6 +129,7 @@ function changeMode(){
     const answers = document.querySelectorAll('.answers-item');
     const button_validate = document.getElementById("validate");
     const button_reset = document.getElementById("reset");
+    const randomizer = document.getElementById('random');
 
     // passe en mode réponses
     if(mode == 'test' || mode == 'validate'){
@@ -128,6 +148,7 @@ function changeMode(){
         // hide validate button
         button_validate.style.opacity = '0';
         button_reset.style.opacity = '0';
+        randomizer.style.opacity = '0';
     }
     // passe en mode test
     else{
@@ -146,6 +167,7 @@ function changeMode(){
         // show validate button
         button_validate.style.opacity = '1';
         button_reset.style.opacity = '1';
+        randomizer.style.opacity = '1';
     }
 }
 
@@ -163,6 +185,11 @@ function getAnswers() {
     // get input parts
     const input = document.getElementById("answerer-input");
     const input_parts = input.value.toLowerCase().split(" ");
+
+    // stop if input is empty
+    if(input_parts[0] === ""){
+        return
+    }
 
     const questions = document.querySelectorAll(".question");
 
@@ -221,4 +248,43 @@ function compare(title, input){
     });
 
     return match;
+}
+
+function randomizer(close_or_open){
+    const randomizer = document.getElementById("randomizer");
+
+    if(close_or_open === "open"){
+        randomizer.style.display = "flex";
+        randomizer_add_question();
+        const randomizer_validate = document.getElementById("randomizer-validate");
+        randomizer_validate.style.display = 'flex';
+        const randomizer_next = document.getElementById("randomizer-next");
+        randomizer_next.style.display = 'none';
+    } 
+    else {
+        randomizer.style.display = "none";
+        init_test();
+    }
+}
+
+function randomInt(min, max) {
+  const range = max - min + 1;
+  const array = new Uint32Array(1);
+  crypto.getRandomValues(array);
+  return min + (array[0] % range);
+}
+
+function randomizer_add_question(){
+    const randomizer_question = document.getElementById("randomizer-question");
+    const questions = document.querySelectorAll(".question");
+    let rand = randomInt(0, questions.length);
+
+    const randomizer_validate = document.getElementById("randomizer-validate");
+    randomizer_validate.style.display = 'flex';
+    const randomizer_next = document.getElementById("randomizer-next");
+    randomizer_next.style.display = 'none';
+
+    randomizer_question.innerHTML = questions[rand].innerHTML;
+
+    init_test();
 }

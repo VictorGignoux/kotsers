@@ -23,6 +23,19 @@
                 <div id="answerer-answers"></div>
             </div>
 
+            <div id="randomizer">
+                <div id="randomizer-container">
+                    <div id="randomizer-top">
+                        <button id="randomizer-close" type="button" onclick="randomizer('close')"><img src="./cross.svg" alt="cross"></button>
+                    </div>
+                    <div id="randomizer-question">
+                        
+                    </div>
+                    <button id="randomizer-validate" type="button" class="btn" onclick="validate(true)">Valider</button>
+                    <button id="randomizer-next" type="button" class="btn" onclick="randomizer_add_question()">Suivant</button>
+                </div>
+            </div>
+
             <div id="summary">
                 <h2>Sommaire</h2>
                 <button type="button" onclick="goto('IALP')">Introduction à la programmation</button>
@@ -43,8 +56,6 @@
                 <button type="button" onclick="goto('URPD')">Utiliser Room pour la persistance des données</button>
                 <button type="button" onclick="goto('SDACD')">Stocker des données et y accéder à l'aide de clés avec DataStore</button>
                 <button type="button" onclick="goto('PTW')">Planifier des tâches avec WorkManager</button>
-                <button type="button" onclick="goto('VAC')">Vues Android et Compose dans les vues</button>
-                <button type="button" onclick="goto('VDC')">Vues dans Compose</button>
             </div>
 
             <button id="up" type="button" onclick="goto('top')"><img src="./up.svg" alt="up"></button>
@@ -66,6 +77,7 @@
                     </div>
                 </div>
                 <button id="mode" class="btn" type="button" onclick="changeMode()">Voir les réponses</button>
+                <button id="random" class="btn" type="button" onclick="randomizer('open')">randomizer</button>
                 <button id="validate" class="btn" type="button" onclick="validate()">Valider</button>
                 <button id="reset" class="btn" type="button" onclick="reset()">Recommencer</button>
             </div>
@@ -1878,162 +1890,6 @@
                 <span class="title-score"></span>
             </div>
 
-            <!----------------------- SECTION : Vues Android et Compose dans les vues ----------------------->
-
-            <div class="section">
-                <h2 class="section-title" id="VAC">Vues Android et Compose dans les vues</h2>
-                <div class="section-questions">
-                    <div class="question">
-                        <p class="question-title">1/ Quelle langue est utilisée pour créer les mises en page de type "View" ?</p>
-                        <div class="answers">
-                            <div class="answers-item">a. HTML</div>
-                            <div class="answers-item">b. Kotlin</div>
-                            <div class="answers-item correct">c. XML</div>
-                            <div class="answers-item">d. Java</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">2/ Lors de la création d'une application avec des vues, par lequel des éléments suivants doit être remplacé le concept de composable "écran" ?</p>
-                        <div class="answers">
-                            <div class="answers-item correct">a. Fragment</div>
-                            <div class="answers-item">b. ViewModel</div>
-                            <div class="answers-item">c. Composable</div>
-                            <div class="answers-item">d. Activité</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">3/ Les liaisons de vue permettent d'accéder aux éléments View déclarés au format XML et d'interagir avec eux.</p>
-                        <div class="answers">
-                            <div class="answers-item correct">a. Vrai</div>
-                            <div class="answers-item">b. Faux</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">4/ Dans quelle méthode de cycle de vie Fragment la liaison des vues est-elle gonflée ?</p>
-                        <div class="answers">
-                            <div class="answers-item">a. onViewCreated()</div>
-                            <div class="answers-item correct">b. onCreateView()</div>
-                            <div class="answers-item">c. onStart()</div>
-                            <div class="answers-item">d. onResume()</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">5/ Les composants de la vue sont accessibles avant le gonflement de la liaison des vues.</p>
-                        <div class="answers">
-                            <div class="answers-item">a. Vrai</div>
-                            <div class="answers-item correct">b. Faux</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">6/ Un élément ComposeView est un(e) :</p>
-                        <div class="answers">
-                            <div class="answers-item">a. Vue pouvant héberger une vue Android dans une interface utilisateur Compose.</div>
-                            <div class="answers-item correct">b. Vue Android pouvant héberger le contenu de l'interface utilisateur de Jetpack Compose dans une mise en page de type View</div>
-                            <div class="answers-item">c. Vue Android pouvant héberger une vue Android dans une mise en page de type View.</div>
-                            <div class="answers-item">d. Vue pouvant héberger l'interface utilisateur de Compose dans une interface utilisateur Compose.</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">7/ Jetpack Compose et le système View peuvent coexister dans votre codebase.</p>
-                        <div class="answers">
-                            <div class="answers-item correct">a. Vrai</div>
-                            <div class="answers-item">b. Faux</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">8/ ComposeView utilise sa méthode ___ pour afficher les éléments Compose à l'écran.</p>
-                        <div class="answers">
-                            <div class="answers-item">a. Composable()</div>
-                            <div class="answers-item correct">b. setContent()</div>
-                            <div class="answers-item">c. setComposeContent()</div>
-                            <div class="answers-item">d. displayComposable()</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">9/ L'interopérabilité avec les vues a été conçue dès le départ dans Jetpack Compose.</p>
-                        <div class="answers">
-                            <div class="answers-item correct">a. Vrai</div>
-                            <div class="answers-item">b. Faux</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">10/ L'indicateur qui permet à Android Studio de fonctionner avec Compose est le suivant :</p>
-                        <div class="answers">
-                            <div class="answers-item">a. Au niveau du projet, utilisez buildFeatures { compose true }</div>
-                            <div class="answers-item correct">b. Au niveau de l'application, utilisez buildFeatures { compose true }</div>
-                            <div class="answers-item">c. Au niveau du projet, utilisez buildFeatures { enableCompose true }</div>
-                            <div class="answers-item">d. Au niveau de l'application, utilisez buildFeatures { enableCompose true }</div>
-                        </div>
-                    </div>
-
-                </div>
-                <span class="title-score"></span>
-            </div>
-
-            <!----------------------- SECTION : Vues dans Compose ----------------------->
-
-            <div class="section">
-                <h2 class="section-title" id="VDC">Vues dans Compose</h2>
-                <div class="section-questions">
-                    <div class="question">
-                        <p class="question-title">1/ Quel composable permet d'implémenter l'interopérabilité d'une vue ?</p>
-                        <div class="answers">
-                            <div class="answers-item">a. InputRow</div>
-                            <div class="answers-item">b. Column</div>
-                            <div class="answers-item">c. TextInputRow</div>
-                            <div class="answers-item correct">d. AndroidView</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">2/ Qu'est-ce qu'un élément AndroidView ?</p>
-                        <div class="answers">
-                            <div class="answers-item correct">a. Un composable qui héberge un élément ou une hiérarchie de type View</div>
-                            <div class="answers-item">b. Une vue Android qui héberge le contenu de l'UI Jetpack Compose dans une mise en page de type View</div>
-                            <div class="answers-item">c. Une vue Android qui héberge une vue Android dans une mise en page de type View</div>
-                            <div class="answers-item">d. Une vue Compose qui héberge le contenu de l'UI Jetpack Compose dans une interface utilisateur Compose</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">3/ Parmi les éléments suivants, lesquels sont des paramètres du composable AndroidView ?</p>
-                        <div class="answers">
-                            <div class="answers-item correct">a. factory</div>
-                            <div class="answers-item">b. inputLabel</div>
-                            <div class="answers-item correct">c. update</div>
-                            <div class="answers-item correct">d. modifier</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">4/ Le rappel update du composable AndroidView est appelé une fois que la vue correspondante a été gonflée.</p>
-                        <div class="answers">
-                            <div class="answers-item correct">a. Vrai</div>
-                            <div class="answers-item">b. Faux</div>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <p class="question-title">5/ Quelle est la fonction du lambda factory du composable AndroidView ?</p>
-                        <div class="answers">
-                            <div class="answers-item">a. Décore et améliore le composable AndroidView</div>
-                            <div class="answers-item">b. Exécute le code après le gonflement de la vue</div>
-                            <div class="answers-item correct">c. Crée la vue</div>
-                        </div>
-                    </div>
-
-                </div>
-                <span class="title-score"></span>
-            </div>
         </div>
     </div>
 
