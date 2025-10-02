@@ -162,20 +162,26 @@ function reset() {
 function getAnswers() {
     // get input parts
     const input = document.getElementById("answerer-input");
-    const input_parts = input.value.split(" ");
+    const input_parts = input.value.toLowerCase().split(" ");
 
     const questions = document.querySelectorAll(".question");
 
     const answerer_answers = document.getElementById("answerer-answers");
     answerer_answers.innerHTML = "";
-    
+    let current_score = 0;
+
     questions.forEach(question => {
         const title = question.querySelector(".question-title");
-        const title_parts = title.innerHTML.split(" ");
+        const title_parts = title.innerHTML.toLowerCase().split(" ");
 
-        if(compare(title_parts, input_parts)){
+        let score = compare(title_parts, input_parts);
 
-            console.log(title)
+        if(score > current_score){
+            current_score = score;
+            answerer_answers.innerHTML = "";
+        }
+
+        if(score === current_score){
 
             // get answers
             const answers = question.querySelectorAll(".correct")
@@ -206,14 +212,13 @@ function getAnswers() {
 
 function compare(title, input){
 
-    let match = false;
-    let i = 0;
-    while(match == false && i < input.length){
-        if(title.includes(input[i])){
-            return true
-        }
-        i++;
-    }
+    let match = 0;
 
-    return false;
+    input.forEach(item => {
+        if(title.includes(item)){
+            match++;
+        }
+    });
+
+    return match;
 }
