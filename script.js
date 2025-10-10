@@ -52,7 +52,7 @@ function validate(randomizer=false){
             const answers = question.querySelectorAll(".answers-item");
             if(answers.length == 0){
                 // -------------------- TODO manage input questions -----------------------
-                isCorrect = false;
+                isCorrect = true;
             }
             // validate answer
             answers.forEach(answer => {
