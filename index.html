@@ -7,10 +7,12 @@
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <link rel="icon" href="./kot.svg">
+    <link rel="icon" href="img/kot.svg">
 </head>
 <body>
-<audio id="pipe" src="pipe.mp3"></audio>
+    <audio id="spooky-audio" src="audio/spooky_sound.mp3"></audio>
+    <audio id="pipe" src="pipe.mp3"></audio>
+    <img id="freaky-image" src="img/victor_johnson.png" class="hidden" alt="spooky image">
 
     <div id="content">
         <div id="qcm">
@@ -19,7 +21,7 @@
             <div id="answerer">
                 <div id="answerer-container">
                     <input id="answerer-input" type="text" name="answerer-input" placeholder="Entrez une question...">
-                    <button id="answerer-btn" type="button" onclick="getAnswers()"><img src="./post.svg" alt="post"></button>
+                    <button id="answerer-btn" type="button" onclick="getAnswers()"><img src="img/post.svg" alt="post"></button>
                 </div>
                 <div id="answerer-answers"></div>
             </div>
@@ -27,7 +29,7 @@
             <div id="randomizer">
                 <div id="randomizer-container">
                     <div id="randomizer-top">
-                        <button id="randomizer-close" type="button" onclick="randomizer(false)"><img src="./cross.svg" alt="cross"></button>
+                        <button id="randomizer-close" type="button" onclick="randomizer(false)"><img src="img/cross.svg" alt="cross"></button>
                     </div>
                     <div id="randomizer-question">
                     </div>
@@ -62,7 +64,7 @@
                 <button type="button" onclick="goto('PTW')">Planifier des tâches avec WorkManager</button>
             </div>
 
-            <button id="up" type="button" onclick="goto('top')"><img src="./up.svg" alt="up"></button>
+            <button id="up" type="button" onclick="goto('top')"><img src="img/up.svg" alt="up"></button>
 
             <div id="floating-elements">
                 <span id="total-score"></span>
