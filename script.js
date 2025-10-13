@@ -75,6 +75,11 @@ function validate(randomizer=false){
                     else {
                         answer.style.backgroundColor = '#ff6767';
                         isCorrect = false;
+                        if(randomizer){
+                            // random pipe
+                            let pipe = document.getElementById("pipe");
+                            pipe.play();
+                        }
                     }
                 }
                 // missed answer
@@ -304,7 +309,7 @@ function randomizer_add_question(){
     nbQuestionsAnswered++
     let rand = randomInt(0, allQuestions.length);
 
-    if (rand!==0){
+    if (allQuestions.length !== 0){
         const randomizer_validate = document.getElementById("randomizer-validate");
         randomizer_validate.style.display = 'flex';
         const randomizer_next = document.getElementById("randomizer-next");
@@ -353,7 +358,7 @@ function freakyInteraction(){
         img.style.animation = "disappear 5s";
         img.addEventListener("animationend", () => {
             img.style.animation = "";
-            audio.stop()
+            audio.pause();
         })
     })
 }
