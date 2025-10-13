@@ -6,7 +6,7 @@ let nbQuestionsAnswered; // The number of questions answered by the user
 document.addEventListener('DOMContentLoaded', function(){
     document.addEventListener('click', () => {
         if (randomInt(1,200) === 1){
-            freakyImageInteraction();
+            freakyInteraction();
         }
     })
     sessionStorage.setItem('mode', 'test');
@@ -343,11 +343,17 @@ function randomizer_add_question(){
     }
 }
 
-function freakyImageInteraction(){
+function freakyInteraction(){
     const img = document.getElementById("freaky-image");
+    const audio = document.getElementById("spooky-audio");
 
     img.style.animation = "appearIn 5s";
+    audio.play()
     img.addEventListener("animationend", () => {
         img.style.animation = "disappear 5s";
+        img.addEventListener("animationend", () => {
+            img.style.animation = "";
+            audio.stop()
+        })
     })
 }
