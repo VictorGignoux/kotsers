@@ -65,6 +65,11 @@ function validate(randomizer=false){
                     else {
                         answer.style.backgroundColor = '#ff6767';
                         isCorrect = false;
+                        if(randomizer){
+                            // random pipe
+                            let pipe = document.getElementById("pipe");
+                            pipe.play();
+                        }
                     }
                 }
                 // missed answer
