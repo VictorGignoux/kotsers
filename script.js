@@ -1,3 +1,8 @@
+let allQuestions = []; // All the questions
+let randomizerScore; // The current score of the user
+let totalQuestions; // The total number of questions
+let nbQuestionsAnswered; // The number of questions answered by the user
+
 document.addEventListener('DOMContentLoaded', function(){
     sessionStorage.setItem('mode', 'test');
 
@@ -75,7 +80,10 @@ function validate(randomizer=false){
             });
             // increase score if correct
             if(isCorrect){
-                score++;
+                if (randomizer===true)
+                    randomizerScore++
+                else
+                    score++;
             }
         });
         if(!randomizer){
@@ -246,10 +254,14 @@ function compare(title, input){
     return match;
 }
 
-function randomizer(close_or_open){
+function randomizer(open){
     const randomizer = document.getElementById("randomizer");
+    if(open===true){
+        allQuestions = Array.from(document.querySelectorAll(".question"));
+        randomizerScore = 0;
+        totalQuestions = allQuestions.length;
+        nbQuestionsAnswered = 0;
 
-    if(close_or_open === "open"){
         randomizer.style.display = "flex";
         randomizer_add_question();
         const randomizer_validate = document.getElementById("randomizer-validate");
@@ -259,7 +271,12 @@ function randomizer(close_or_open){
         reset();
     } 
     else {
+        // Clears the displayed values if randomizer is closed and opened again
+        document.getElementById('randomizer-score').innerHTML=""
+        document.getElementById("randomizer-remaining").innerHTML=""
+
         randomizer.style.display = "none";
+
     }
 }
 
@@ -272,15 +289,23 @@ function randomInt(min, max) {
 
 function randomizer_add_question(){
     const randomizer_question = document.getElementById("randomizer-question");
-    const questions = document.querySelectorAll(".question");
-    let rand = randomInt(0, questions.length);
+    const randomize_score = document.getElementById("randomizer-score");
+    const randomize_remaining = document.getElementById("randomizer-remaining");
+
+    if (nbQuestionsAnswered !== 0)
+        randomize_score.innerHTML = `${randomizerScore}/${nbQuestionsAnswered} - ${(randomizerScore/nbQuestionsAnswered*100).toFixed(1)}%`
+    randomize_remaining.innerHTML = `Plus que ${allQuestions.length} questions`
+
+    nbQuestionsAnswered++
+    let rand = randomInt(0, allQuestions.length);
 
     const randomizer_validate = document.getElementById("randomizer-validate");
     randomizer_validate.style.display = 'flex';
     const randomizer_next = document.getElementById("randomizer-next");
     randomizer_next.style.display = 'none';
 
-    randomizer_question.innerHTML = questions[rand].innerHTML;
+    randomizer_question.innerHTML = allQuestions[rand].innerHTML;
+    allQuestions.splice(rand, 1);
 
     randomizer_question.querySelectorAll(".answers-item").forEach(answer => {
         answer.addEventListener('click', function(){

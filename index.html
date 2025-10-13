@@ -26,10 +26,13 @@
             <div id="randomizer">
                 <div id="randomizer-container">
                     <div id="randomizer-top">
-                        <button id="randomizer-close" type="button" onclick="randomizer('close')"><img src="./cross.svg" alt="cross"></button>
+                        <button id="randomizer-close" type="button" onclick="randomizer(false)"><img src="./cross.svg" alt="cross"></button>
                     </div>
                     <div id="randomizer-question">
-                        
+                    </div>
+                    <div id="randomizer-score-container">
+                        <p id="randomizer-score"></p>
+                        <p id="randomizer-remaining"></p>
                     </div>
                     <button id="randomizer-validate" type="button" class="btn" onclick="validate(true)">Valider</button>
                     <button id="randomizer-next" type="button" class="btn" onclick="randomizer_add_question()">Suivant</button>
@@ -77,7 +80,7 @@
                     </div>
                 </div>
                 <button id="mode" class="btn" type="button" onclick="changeMode()">Voir les réponses</button>
-                <button id="random" class="btn" type="button" onclick="randomizer('open')">randomizer</button>
+                <button id="random" class="btn" type="button" onclick="randomizer(true)">Randomizer</button>
                 <button id="validate" class="btn" type="button" onclick="validate()">Valider</button>
                 <button id="reset" class="btn" type="button" onclick="reset()">Recommencer</button>
             </div>
