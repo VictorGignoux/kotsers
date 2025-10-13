@@ -299,7 +299,7 @@ function randomizer_add_question(){
     nbQuestionsAnswered++
     let rand = randomInt(0, allQuestions.length);
 
-    if (rand!==0){
+    if (allQuestions.length !== 0){
         const randomizer_validate = document.getElementById("randomizer-validate");
         randomizer_validate.style.display = 'flex';
         const randomizer_next = document.getElementById("randomizer-next");
