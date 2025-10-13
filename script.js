@@ -1,3 +1,5 @@
+let allQuestions = [];
+
 document.addEventListener('DOMContentLoaded', function(){
     sessionStorage.setItem('mode', 'test');
 
@@ -246,10 +248,12 @@ function compare(title, input){
     return match;
 }
 
-function randomizer(close_or_open){
+function randomizer(open){
     const randomizer = document.getElementById("randomizer");
 
-    if(close_or_open === "open"){
+    if(open===true){
+        allQuestions = Array.from(document.querySelectorAll(".question"))
+
         randomizer.style.display = "flex";
         randomizer_add_question();
         const randomizer_validate = document.getElementById("randomizer-validate");
@@ -272,15 +276,15 @@ function randomInt(min, max) {
 
 function randomizer_add_question(){
     const randomizer_question = document.getElementById("randomizer-question");
-    const questions = document.querySelectorAll(".question");
-    let rand = randomInt(0, questions.length);
+    let rand = randomInt(0, allQuestions.length);
 
     const randomizer_validate = document.getElementById("randomizer-validate");
     randomizer_validate.style.display = 'flex';
     const randomizer_next = document.getElementById("randomizer-next");
     randomizer_next.style.display = 'none';
 
-    randomizer_question.innerHTML = questions[rand].innerHTML;
+    randomizer_question.innerHTML = allQuestions[rand].innerHTML;
+    allQuestions.splice(rand, 1);
 
     randomizer_question.querySelectorAll(".answers-item").forEach(answer => {
         answer.addEventListener('click', function(){
