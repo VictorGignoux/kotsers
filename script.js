@@ -299,26 +299,41 @@ function randomizer_add_question(){
     nbQuestionsAnswered++
     let rand = randomInt(0, allQuestions.length);
 
-    const randomizer_validate = document.getElementById("randomizer-validate");
-    randomizer_validate.style.display = 'flex';
-    const randomizer_next = document.getElementById("randomizer-next");
-    randomizer_next.style.display = 'none';
+    if (rand!==0){
+        const randomizer_validate = document.getElementById("randomizer-validate");
+        randomizer_validate.style.display = 'flex';
+        const randomizer_next = document.getElementById("randomizer-next");
+        randomizer_next.style.display = 'none';
 
-    randomizer_question.innerHTML = allQuestions[rand].innerHTML;
-    allQuestions.splice(rand, 1);
+        randomizer_question.innerHTML = allQuestions[rand].innerHTML;
+        allQuestions.splice(rand, 1);
 
-    randomizer_question.querySelectorAll(".answers-item").forEach(answer => {
-        answer.addEventListener('click', function(){
-            const mode = sessionStorage.getItem('mode');
-            if(mode === "test"){
-                if(answer.classList.contains("selected")){
-                    answer.classList.remove('selected');
-                    answer.style.backgroundColor = '#FFFFFF';
-                } else {
-                    answer.classList.add('selected');
-                    answer.style.backgroundColor = '#DDDDDD';
+        randomizer_question.querySelectorAll(".answers-item").forEach(answer => {
+            answer.addEventListener('click', function(){
+                const mode = sessionStorage.getItem('mode');
+                if(mode === "test"){
+                    if(answer.classList.contains("selected")){
+                        answer.classList.remove('selected');
+                        answer.style.backgroundColor = '#FFFFFF';
+                    } else {
+                        answer.classList.add('selected');
+                        answer.style.backgroundColor = '#DDDDDD';
+                    }
                 }
-            }
+            });
         });
-    });
+    }
+    else
+    {
+        randomizer_question.innerHTML =
+            `
+                <div id="randomizer-no-questions">
+                    <h2>Plus de question!</h2>
+                    <h3>Votre score est de ${randomizerScore}/${nbQuestionsAnswered}</h3>
+                    <h3>Cela fait un taux de bonne réponse de ${(randomizerScore/nbQuestionsAnswered*100).toFixed(1)}%</h3>
+                </div>
+            `
+        randomize_remaining.innerHTML="";
+        randomize_score.innerHTML="";
+    }
 }
