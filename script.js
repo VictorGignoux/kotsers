@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', function(){
             freakyInteraction();
         }
     })
+    if (document.cookie==="seenIt=true"){
+        const buttonContainer = document.getElementById("spooky-button-container")
+        buttonContainer.remove();
+    }
     sessionStorage.setItem('mode', 'test');
 
     answers = document.querySelectorAll('.answers-item');
@@ -355,6 +359,9 @@ function freakyButtonInteraction(){
         goto("top")
         buttonContainer.remove();
     }, 3500);
+
+    document.cookie = "seenIt=true";
+    console.log(document.cookie);
 
 }
 function freakyInteraction(){
