@@ -4,6 +4,10 @@
     font-family: Choco, sans-serif;
 }
 
+p{
+    font-family: Choco, sans-serif;
+}
+
 @font-face {
     font-family: Choco;
     src: url("TT Chocolates Trial Regular.otf");
@@ -33,6 +37,12 @@ h1{
 
 h2{
     color: var(--title);
+}
+
+a{
+    text-decoration: none;
+    color: var(--title);
+    font-weight: bold;
 }
 
 #content{
@@ -218,7 +228,6 @@ button:hover{
     align-items: center;
     flex-direction: column;
     width: 100vw;
-    min-height: 20vh;
     gap: 0.5vw;
     margin-bottom: 5vh;
 }
@@ -351,6 +360,19 @@ button:hover{
     opacity: 0;
 }
 
+#note-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+
+    background: rgba(32, 131, 104, 0.16);
+
+    border-radius: 0.6em;
+
+    padding: 3vh;
+    margin-bottom: 5vh;
+}
 
 /* RESPONSIVE */
 
