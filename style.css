@@ -374,6 +374,28 @@ button:hover{
     margin-bottom: 5vh;
 }
 
+#spooky-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 300em;
+}
+
+#spooky-button-container button{
+    padding: 1vh 2vw;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 0.6rem;
+    background-color: var(--title);
+    color: #FFF;
+
+    margin-bottom: 1em;
+}
+
+#spooky-button-container button:hover{
+    background-color: #2ba584;
+}
 /* RESPONSIVE */
 
 @media screen and (max-width: 1000px) {

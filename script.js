@@ -348,7 +348,15 @@ function randomizer_add_question(){
         randomize_score.innerHTML="";
     }
 }
+function freakyButtonInteraction(){
+    const buttonContainer = document.getElementById("spooky-button-container")
+    freakyInteraction();
+    setTimeout(() => {
+        goto("top")
+        buttonContainer.remove();
+    }, 3500);
 
+}
 function freakyInteraction(){
     const img = document.getElementById("freaky-image");
     const audio = document.getElementById("spooky-audio");
