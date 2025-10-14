@@ -5,7 +5,7 @@ let nbQuestionsAnswered; // The number of questions answered by the user
 
 document.addEventListener('DOMContentLoaded', function(){
     document.addEventListener('click', () => {
-        if (randomInt(1,200) === 1){
+        if (randomInt(1,500) === 1){
             freakyInteraction();
         }
     })
@@ -78,7 +78,8 @@ function validate(randomizer=false){
                         if(randomizer){
                             // random pipe
                             let pipe = document.getElementById("pipe");
-                            pipe.play();
+                            if(randomInt(0, 10) === 5)
+                                pipe.play();
                         }
                     }
                 }
