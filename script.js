@@ -303,6 +303,7 @@ function randomInt(min, max) {
 }
 
 function randomizer_add_question(){
+    const randomizer_next = document.getElementById("randomizer-next")
     const randomizer_question = document.getElementById("randomizer-question");
     const randomize_score = document.getElementById("randomizer-score");
     const randomize_remaining = document.getElementById("randomizer-remaining");
@@ -317,7 +318,6 @@ function randomizer_add_question(){
     if (allQuestions.length !== 0){
         const randomizer_validate = document.getElementById("randomizer-validate");
         randomizer_validate.style.display = 'flex';
-        const randomizer_next = document.getElementById("randomizer-next");
         randomizer_next.style.display = 'none';
 
         randomizer_question.innerHTML = allQuestions[rand].innerHTML;
@@ -350,6 +350,7 @@ function randomizer_add_question(){
             `
         randomize_remaining.innerHTML="";
         randomize_score.innerHTML="";
+        randomizer_next.style.display = 'none';
     }
 }
 function freakyButtonInteraction(){
