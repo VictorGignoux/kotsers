@@ -3,6 +3,16 @@ let randomizerScore; // The current score of the user
 let totalQuestions; // The total number of questions
 let nbQuestionsAnswered; // The number of questions answered by the user
 
+const randomizerModules = [
+    { name: "Module 1 : Votre première application Android", sections: [1, 2, 3] },
+    { name: "Module 2 : Créer l'interface utilisateur d'une application", sections: [4, 5, 6] },
+    { name: "Module 3 : Afficher des listes et utiliser Material Design", sections: [7, 8, 9] },
+    { name: "Module 4 : Navigation et architecture des applications", sections: [10, 11, 12] },
+    { name: "Module 5 : Se connecter à internet", sections: [13, 14] },
+    { name: "Module 6 : Persistance des données", sections: [15, 16, 17] },
+    { name: "Module 7 : WorkManager", sections: [18] }
+];
+
 document.addEventListener('DOMContentLoaded', function(){
     document.addEventListener('click', () => {
         if (randomInt(1,1000) === 1){
@@ -53,7 +63,7 @@ function validate(randomizer=false){
     sections.forEach(section => {
         let questions;
         if(randomizer){
-            questions = sections;
+            questions = section.querySelectorAll(".question");
         }
         else{
             questions = section.querySelectorAll(".question");
@@ -272,27 +282,146 @@ function compare(title, input){
 function randomizer(open){
     const randomizer = document.getElementById("randomizer");
     if(open===true){
-        allQuestions = Array.from(document.querySelectorAll(".question"));
-        randomizerScore = 0;
-        totalQuestions = allQuestions.length;
-        nbQuestionsAnswered = 0;
-
         randomizer.style.display = "flex";
-        randomizer_add_question();
-        const randomizer_validate = document.getElementById("randomizer-validate");
-        randomizer_validate.style.display = 'flex';
-        const randomizer_next = document.getElementById("randomizer-next");
-        randomizer_next.style.display = 'none';
-        reset();
+        showRandomizerSettings();
     } 
     else {
         // Clears the displayed values if randomizer is closed and opened again
         document.getElementById('randomizer-score').innerHTML=""
         document.getElementById("randomizer-remaining").innerHTML=""
+        document.getElementById("randomizer-question").innerHTML=""
+        document.getElementById("randomizer-question").style.display = "none";
+        document.getElementById("randomizer-settings").style.display = "flex";
 
         randomizer.style.display = "none";
 
     }
+}
+
+function showRandomizerSettings(){
+    const themes = document.getElementById("randomizer-themes");
+    const sections = document.querySelectorAll(".section");
+    const randomizerValidate = document.getElementById("randomizer-validate");
+    const randomizerNext = document.getElementById("randomizer-next");
+
+    themes.innerHTML = "";
+    const sectionData = Array.from(sections).map(section => {
+        const title = section.querySelector(".section-title");
+        return title ? { id: title.id, name: title.textContent } : null;
+    }).filter(Boolean);
+
+    randomizerModules.forEach(moduleData => {
+        const module = document.createElement("fieldset");
+        module.className = "randomizer-module";
+        module.innerHTML = `
+            <legend>
+                <label>
+                    <input type="checkbox" class="randomizer-module-checkbox" checked>
+                    ${moduleData.name}
+                </label>
+            </legend>
+        `;
+
+        const moduleThemes = document.createElement("div");
+        moduleThemes.className = "randomizer-module-themes";
+        moduleData.sections.forEach(sectionNumber => {
+            const theme = sectionData[sectionNumber - 1];
+            if (!theme) {
+                return;
+            }
+
+            const label = document.createElement("label");
+            label.className = "randomizer-theme";
+            label.innerHTML = `
+                <input type="checkbox" class="randomizer-theme-checkbox" value="${theme.id}" checked>
+                <span>${theme.name}</span>
+            `;
+            moduleThemes.append(label);
+        });
+        module.append(moduleThemes);
+        themes.append(module);
+
+        const moduleCheckbox = module.querySelector(".randomizer-module-checkbox");
+        let moduleWasIndeterminate = false;
+        moduleCheckbox.addEventListener("mousedown", event => {
+            moduleWasIndeterminate = moduleCheckbox.indeterminate;
+            if (!moduleWasIndeterminate) {
+                return;
+            }
+
+            event.preventDefault();
+            moduleCheckbox.checked = false;
+            moduleCheckbox.indeterminate = false;
+            module.querySelectorAll(".randomizer-theme-checkbox").forEach(theme => {
+                theme.checked = false;
+            });
+        });
+        moduleCheckbox.addEventListener("click", event => {
+            if (!moduleWasIndeterminate) {
+                return;
+            }
+            event.preventDefault();
+            moduleWasIndeterminate = false;
+        });
+        moduleCheckbox.addEventListener("change", () => {
+            module.querySelectorAll(".randomizer-theme-checkbox").forEach(theme => {
+                theme.checked = moduleCheckbox.checked;
+            });
+        });
+        moduleThemes.addEventListener("change", event => {
+            if (!event.target.classList.contains("randomizer-theme-checkbox")) {
+                return;
+            }
+            const moduleThemesCheckboxes = module.querySelectorAll(".randomizer-theme-checkbox");
+            const selectedThemes = module.querySelectorAll(".randomizer-theme-checkbox:checked");
+            moduleCheckbox.checked = selectedThemes.length === moduleThemesCheckboxes.length;
+            moduleCheckbox.indeterminate = selectedThemes.length > 0 &&
+                selectedThemes.length < moduleThemesCheckboxes.length;
+        });
+    });
+
+    document.getElementById("randomizer-settings-error").textContent = "";
+    document.getElementById("randomizer-settings").style.display = "flex";
+    document.getElementById("randomizer-question").style.display = "none";
+    randomizerValidate.style.display = "none";
+    randomizerNext.style.display = "none";
+}
+
+function selectRandomizerThemes(selected){
+    document.querySelectorAll("#randomizer-themes input").forEach(theme => {
+        theme.checked = selected;
+        theme.indeterminate = false;
+    });
+}
+
+function startRandomizer(){
+    const selectedThemes = new Set(
+        Array.from(document.querySelectorAll("#randomizer-themes .randomizer-theme-checkbox:checked"))
+            .map(theme => theme.value)
+    );
+
+    if (selectedThemes.size === 0) {
+        document.getElementById("randomizer-settings-error").textContent =
+            "Sélectionnez au moins un thème pour commencer.";
+        return;
+    }
+
+    allQuestions = Array.from(document.querySelectorAll(".section"))
+        .filter(section => {
+            const title = section.querySelector(".section-title");
+            return title && selectedThemes.has(title.id);
+        })
+        .flatMap(section => Array.from(section.querySelectorAll(".question")));
+    randomizerScore = 0;
+    totalQuestions = allQuestions.length;
+    nbQuestionsAnswered = 0;
+
+    document.getElementById("randomizer-settings").style.display = "none";
+    document.getElementById("randomizer-question").style.display = "block";
+    document.getElementById("randomizer-validate").style.display = 'flex';
+    document.getElementById("randomizer-next").style.display = 'none';
+    reset();
+    randomizer_add_question();
 }
 
 function randomInt(min, max) {
@@ -310,17 +439,16 @@ function randomizer_add_question(){
 
     if (nbQuestionsAnswered !== 0)
         randomize_score.innerHTML = `${randomizerScore}/${nbQuestionsAnswered} - ${(randomizerScore/nbQuestionsAnswered*100).toFixed(1)}%`
-    randomize_remaining.innerHTML = `Plus que ${allQuestions.length} questions`
-
-    nbQuestionsAnswered++
-    let rand = randomInt(0, allQuestions.length);
 
     if (allQuestions.length !== 0){
+        randomize_remaining.innerHTML = `Plus que ${allQuestions.length} questions`
+        nbQuestionsAnswered++
+        let rand = randomInt(0, allQuestions.length - 1);
         const randomizer_validate = document.getElementById("randomizer-validate");
         randomizer_validate.style.display = 'flex';
         randomizer_next.style.display = 'none';
 
-        randomizer_question.innerHTML = allQuestions[rand].innerHTML;
+        randomizer_question.innerHTML = `<div class="question">${allQuestions[rand].innerHTML}</div>`;
         allQuestions.splice(rand, 1);
 
         randomizer_question.querySelectorAll(".answers-item").forEach(answer => {
