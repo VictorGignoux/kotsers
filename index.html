@@ -31,6 +31,17 @@
                     <div id="randomizer-top">
                         <button id="randomizer-close" type="button" onclick="randomizer(false)"><img src="img/cross.svg" alt="cross"></button>
                     </div>
+                    <div id="randomizer-settings">
+                        <h2>Choisir les thèmes</h2>
+                        <p>Sélectionnez les thèmes à inclure dans le randomizer.</p>
+                        <div id="randomizer-themes"></div>
+                        <div id="randomizer-theme-actions">
+                            <button type="button" class="btn" onclick="selectRandomizerThemes(true)">Tout sélectionner</button>
+                            <button type="button" class="btn" onclick="selectRandomizerThemes(false)">Tout désélectionner</button>
+                        </div>
+                        <p id="randomizer-settings-error" role="alert"></p>
+                        <button id="randomizer-start" type="button" class="btn" onclick="startRandomizer()">Commencer</button>
+                    </div>
                     <div id="randomizer-question">
                     </div>
                     <div id="randomizer-score-container">
@@ -57,7 +68,7 @@
 
             <div id="summary">
                 <h2>Sommaire</h2>
-                <button type="button" onclick="goto('IALP')">Introduction à la programmation</button>
+                <button type="button" onclick="goto('IALP')">Présentation de Kotlin</button>
                 <button type="button" onclick="goto('CAS')">Configurer Android Studio</button>
                 <button type="button" onclick="goto('CUMEPDB')">Créer une mise en page de base</button>
                 <button type="button" onclick="goto('PDBDK')">Principes de base de Kotlin</button>

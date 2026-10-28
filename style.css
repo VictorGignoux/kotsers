@@ -333,6 +333,64 @@ button:hover{
 
 #randomizer-question{
     width: 70%;
+    display: none;
+}
+
+#randomizer-settings{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    text-align: center;
+}
+
+#randomizer-themes{
+    width: 100%;
+    max-height: 45vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    text-align: left;
+}
+
+.randomizer-module{
+    border: 1px solid var(--title);
+    border-radius: 0.6rem;
+    padding: 1vh 1vw;
+}
+
+.randomizer-module legend{
+    padding: 0 0.4vw;
+    color: var(--title);
+    font-weight: bold;
+}
+
+.randomizer-module-themes{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1vh 2vw;
+}
+
+.randomizer-theme{
+    display: flex;
+    gap: 0.5vw;
+    align-items: flex-start;
+}
+
+.randomizer-theme input{
+    margin-top: 0.3rem;
+}
+
+#randomizer-theme-actions{
+    display: flex;
+    gap: 1vw;
+}
+
+#randomizer-settings-error{
+    min-height: 1.2em;
+    color: #c0392b;
 }
 
 #randomizer-no-questions{
@@ -344,6 +402,12 @@ button:hover{
 
 #randomizer-no-questions h2{
     margin-bottom: 3vh;
+}
+
+@media screen and (max-width: 1000px) {
+    .randomizer-module-themes{
+        grid-template-columns: 1fr;
+    }
 }
 
 #freaky-image{
